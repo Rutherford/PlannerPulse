@@ -165,7 +165,7 @@ def rotate_sponsor():
     """Manually rotate to next sponsor - database version"""
     try:
         sponsor_manager = DatabaseSponsorManager()
-        next_sponsor = sponsor_manager.rotate_sponsor()
+        sponsor_manager.rotate_sponsor()
         new_sponsor = sponsor_manager.get_current_sponsor()
         flash(f'Rotated to sponsor: {new_sponsor.get("name", "None")}', 'success')
         return jsonify({'success': True, 'sponsor': new_sponsor})

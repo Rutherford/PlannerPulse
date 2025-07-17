@@ -8,8 +8,8 @@ from datetime import datetime
 from typing import List, Dict, Optional
 from sqlalchemy import desc, func
 from models import (
-    get_session, Article, Newsletter, NewsletterArticle, Sponsor, 
-    SponsorRotation, RSSSource, SystemSettings
+    get_session, Article, Newsletter, NewsletterArticle, Sponsor,
+    SponsorRotation, RSSSource
 )
 
 logger = logging.getLogger(__name__)
@@ -459,10 +459,7 @@ def migrate_existing_data():
     logger.info("Starting data migration from JSON to database...")
     
     try:
-        # Initialize managers
-        article_manager = DatabaseArticleManager()
-        sponsor_manager = DatabaseSponsorManager()
-        rss_manager = DatabaseRSSManager()
+
         
         # Migrate from JSON files
         from models import migrate_from_json

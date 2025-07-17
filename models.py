@@ -204,7 +204,6 @@ def init_database():
 def migrate_from_json():
     """Migrate existing JSON data to database"""
     from deduplicator import ArticleDeduplicator
-    from sponsor_manager import SponsorManager
     import json
     
     session = get_session()
