@@ -9,6 +9,7 @@ import trafilatura
 import logging
 from typing import List, Dict
 from urllib.parse import urlparse
+from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 
@@ -82,12 +83,19 @@ def extract_article_data(entry, source_name: str) -> Dict:
             if isinstance(entry.content, list) and entry.content:
                 summary = entry.content[0].value
         
-        # Clean HTML from summary
+        # Clean HTML from summary safely using BeautifulSoup
         if summary:
-            # Remove HTML tags for cleaner text
-            import re
-            summary = re.sub(r'<[^>]+>', '', summary)
-            summary = summary.strip()
+            # Use BeautifulSoup to safely extract text from HTML
+            soup = BeautifulSoup(summary, 'html.parser')
+            # Remove script and style elements
+            for script in soup(["script", "style"]):
+                script.decompose()
+            # Get text content
+            summary = soup.get_text()
+            # Clean up whitespace
+            lines = (line.strip() for line in summary.splitlines())
+            chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+            summary = ' '.join(chunk for chunk in chunks if chunk)
         
         article['summary'] = summary
         
