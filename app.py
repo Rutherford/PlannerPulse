@@ -7,6 +7,7 @@ Provides preview and management capabilities with database integration
 import json
 import logging
 import os
+import secrets
 from datetime import datetime
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -23,7 +24,16 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+
+# Generate a secure secret key
+secret_key = os.environ.get('SECRET_KEY')
+if not secret_key:
+    # Generate a random secret key for development
+    # In production, always set SECRET_KEY environment variable
+    secret_key = secrets.token_hex(32)
+    logger.warning("No SECRET_KEY found in environment. Generated random key (not suitable for production)")
+
+app.secret_key = secret_key
 
 # Configure database
 app.config['SQLALCHEMY_DATABASE_URI'] = get_database_url()
