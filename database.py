@@ -6,6 +6,7 @@ Provides database-backed versions of existing JSON-based functionality
 import logging
 from datetime import datetime
 from typing import List, Dict, Optional
+from contextlib import contextmanager
 from sqlalchemy import desc, func
 from models import (
     get_session, Article, Newsletter, NewsletterArticle, Sponsor,
@@ -14,32 +15,46 @@ from models import (
 
 logger = logging.getLogger(__name__)
 
+@contextmanager
+def get_db_session():
+    """Context manager for database sessions with proper cleanup"""
+    session = get_session()
+    try:
+        yield session
+        session.commit()
+    except Exception:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
 class DatabaseArticleManager:
     """Database-backed article management replacing JSON-based deduplicator"""
     
     def __init__(self):
-        self.session = get_session()
+        self.session = None
     
     def is_duplicate(self, article: Dict) -> bool:
         """Check if article already exists in database"""
         try:
-            # Check by URL
-            if 'link' in article:
-                existing = self.session.query(Article).filter(
-                    Article.link == article['link']
-                ).first()
-                if existing:
-                    return True
-            
-            # Check by content hash if available
-            if 'content_hash' in article:
-                existing = self.session.query(Article).filter(
-                    Article.content_hash == article['content_hash']
-                ).first()
-                if existing:
-                    return True
-            
-            return False
+            with get_db_session() as session:
+                # Check by URL
+                if 'link' in article:
+                    existing = session.query(Article).filter(
+                        Article.link == article['link']
+                    ).first()
+                    if existing:
+                        return True
+                
+                # Check by content hash if available
+                if 'content_hash' in article:
+                    existing = session.query(Article).filter(
+                        Article.content_hash == article['content_hash']
+                    ).first()
+                    if existing:
+                        return True
+                
+                return False
         except Exception as e:
             logger.error(f"Error checking for duplicate: {e}")
             return False
