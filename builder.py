@@ -1,6 +1,4 @@
-"""
-Newsletter builder - Creates HTML and Markdown versions
-"""
+"""Newsletter builder - Creates HTML, Markdown and text versions"""
 
 import os
 import json
@@ -11,45 +9,41 @@ from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
 logger = logging.getLogger(__name__)
 
-def build_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> bool:
-    """
-    Build HTML and Markdown versions of the newsletter
-    
-    Args:
-        newsletter_data: Dictionary containing newsletter content
-        config: Configuration dictionary
-    
-    Returns:
-        True if successful, False otherwise
+def build_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> tuple:
+    """Build newsletter in HTML, Markdown and text formats.
+
+    In addition to writing the files to the ``output`` directory this
+    function now returns the generated content for each format.
+
+    Returns a tuple ``(success, html_content, markdown_content, text_content)``.
+    ``success`` will be ``True`` only if all formats were built successfully.
     """
     try:
         # Ensure output directory exists
         os.makedirs("output", exist_ok=True)
-        
-        # Build HTML version
-        html_success = build_html_newsletter(newsletter_data, config)
-        
-        # Build Markdown version
-        md_success = build_markdown_newsletter(newsletter_data, config)
-        
-        # Build plain text version for email compatibility
-        text_success = build_text_newsletter(newsletter_data, config)
-        
-        success = html_success and md_success and text_success
-        
+
+        # Build each format and capture the resulting content
+        html_content = build_html_newsletter(newsletter_data, config)
+        md_content = build_markdown_newsletter(newsletter_data, config)
+        text_content = build_text_newsletter(newsletter_data, config)
+
+        success = all([html_content is not None, md_content is not None, text_content is not None])
+
         if success:
             logger.info("Newsletter built successfully in all formats")
         else:
             logger.warning("Some newsletter formats failed to build")
-        
-        return success
-        
+
+        return success, html_content or "", md_content or "", text_content or ""
+
     except Exception as e:
         logger.error(f"Failed to build newsletter: {e}")
-        return False
+        return False, "", "", ""
 
-def build_html_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> bool:
-    """Build HTML version of newsletter"""
+def build_html_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> str | None:
+    """Build HTML version of newsletter.
+
+    Returns the rendered HTML string or ``None`` on failure."""
     try:
         # Setup Jinja2 environment
         env = Environment(loader=FileSystemLoader('templates'))
@@ -70,19 +64,21 @@ def build_html_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any
         # Write to file
         with open("output/newsletter.html", "w", encoding="utf-8") as f:
             f.write(html_output)
-        
+
         logger.info("HTML newsletter created: output/newsletter.html")
-        return True
+        return html_output
         
     except TemplateNotFound:
         logger.error("HTML template not found: templates/base_template.html")
-        return False
+        return None
     except Exception as e:
         logger.error(f"Failed to build HTML newsletter: {e}")
-        return False
+        return None
 
-def build_markdown_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> bool:
-    """Build Markdown version of newsletter"""
+def build_markdown_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> str | None:
+    """Build Markdown version of newsletter.
+
+    Returns the Markdown text or ``None`` on failure."""
     try:
         md_content = []
         
@@ -134,14 +130,16 @@ def build_markdown_newsletter(newsletter_data: Dict[str, Any], config: Dict[str,
             f.write(markdown_text)
         
         logger.info("Markdown newsletter created: output/newsletter.md")
-        return True
+        return markdown_text
         
     except Exception as e:
         logger.error(f"Failed to build Markdown newsletter: {e}")
-        return False
+        return None
 
-def build_text_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> bool:
-    """Build plain text version for email compatibility"""
+def build_text_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any]) -> str | None:
+    """Build plain text version for email compatibility.
+
+    Returns the plain text string or ``None`` on failure."""
     try:
         text_content = []
         
@@ -200,11 +198,11 @@ def build_text_newsletter(newsletter_data: Dict[str, Any], config: Dict[str, Any
             f.write(plain_text)
         
         logger.info("Plain text newsletter created: output/newsletter.txt")
-        return True
+        return plain_text
         
     except Exception as e:
         logger.error(f"Failed to build plain text newsletter: {e}")
-        return False
+        return None
 
 def clean_text_for_email(text: str) -> str:
     """Remove markdown formatting for plain text email"""
@@ -269,5 +267,5 @@ if __name__ == "__main__":
         'newsletter_title': 'Planner Pulse'
     }
     
-    success = build_newsletter(test_data, test_config)
+    success, html_out, md_out, text_out = build_newsletter(test_data, test_config)
     print(f"Build test result: {success}")

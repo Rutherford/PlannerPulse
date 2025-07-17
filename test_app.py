@@ -121,8 +121,8 @@ def generate_newsletter():
             'generated_at': datetime.now().isoformat()
         }
         
-        success = build_newsletter(newsletter_data, config)
-        
+        success, _, _, _ = build_newsletter(newsletter_data, config)
+
         if success:
             flash('Test newsletter generated successfully!', 'success')
             logger.info("Test newsletter generation completed successfully")
