@@ -1,0 +1,258 @@
+## 🧠 Project Title: `Planner Pulse – AI-Powered Newsletter for Meeting Planners`
+
+---
+
+### 🧱 OVERVIEW
+
+An automated newsletter generator that:
+
+* Scrapes top meeting/tourism industry sources
+* Uses GPT-4o to summarize and format stories
+* Automatically builds an HTML/Markdown newsletter
+* Outputs to email-friendly format (for Beehiiv, MailerLite, etc.)
+* Optionally includes sponsor sections and CTA blocks
+
+---
+
+## ✅ STEP-BY-STEP INSTRUCTIONS FOR REPLIT
+
+---
+
+### **1. Create a New Replit Project**
+
+* Template: **Python**
+* Project name: `planner-pulse-newsletter`
+
+---
+
+### **2. Project Structure**
+
+```bash
+planner-pulse-newsletter/
+│
+├── main.py                    # Main entry point to generate newsletter
+├── scraper.py                 # Scrapes article feeds (RSS + HTML fallback)
+├── summarizer.py              # Calls OpenAI to summarize content
+├── builder.py                 # Builds HTML/Markdown newsletter
+├── config.json                # Settings: sources, sponsor, output style
+├── output/
+│   ├── newsletter.md          # Markdown version
+│   └── newsletter.html        # Beehiiv-ready HTML
+├── templates/
+│   └── base_template.html     # Jinja2-based email layout
+├── requirements.txt           # Dependencies
+└── README.md                  # Project info + usage
+```
+
+---
+
+### \*\*3. \*\***`requirements.txt`**
+
+```txt
+openai
+feedparser
+beautifulsoup4
+requests
+jinja2
+python-dotenv
+```
+
+---
+
+### \*\*4. Setup \*\***`config.json`**
+
+```json
+{
+  "sources": [
+    "https://www.meetingstoday.com/rss.xml",
+    "https://www.bizbash.com/rss.xml",
+    "https://www.tsnn.com/news/rss.xml"
+  ],
+  "output_format": "html",
+  "newsletter_title": "Planner Pulse",
+  "sponsor": {
+    "name": "Visit St. Pete Clearwater",
+    "message": "This issue is sponsored by Visit St. Pete Clearwater — where sunshine meets sophistication. Learn more about hosting your next meeting in paradise.",
+    "link": "https://www.visitstpeteclearwater.com/meetings"
+  }
+}
+```
+
+---
+
+### **5. Create ********`.env`******** File**
+
+> Replit will handle secret storage—add this to Secrets tab
+
+```env
+OPENAI_API_KEY=your_openai_key_here
+```
+
+---
+
+### **6. ********`scraper.py`******** – Article Scraper**
+
+Uses `feedparser` to grab articles from RSS feeds.
+
+```python
+import feedparser
+
+def fetch_articles(rss_urls):
+    articles = []
+    for url in rss_urls:
+        feed = feedparser.parse(url)
+        for entry in feed.entries[:5]:  # Limit per feed
+            articles.append({
+                "title": entry.title,
+                "link": entry.link,
+                "summary": entry.summary if "summary" in entry else "",
+            })
+    return articles
+```
+
+---
+
+### **7. ********`summarizer.py`******** – GPT Summarizer**
+
+```python
+import os
+import openai
+from dotenv import load_dotenv
+
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+def summarize_article(article_text):
+    prompt = f"""
+You're writing for a newsletter for meeting planners.
+
+Summarize this article in 2–3 sentences. Include a title and a takeaway.
+
+Article:
+{article_text}
+
+Return in this format:
+**Title**
+Summary
+🔑 Takeaway
+"""
+
+    response = openai.ChatCompletion.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.5
+    )
+
+    return response.choices[0].message.content.strip()
+```
+
+---
+
+### **8. ********`builder.py`******** – Format Newsletter**
+
+```python
+from jinja2 import Environment, FileSystemLoader
+import os
+import json
+
+def build_newsletter(summaries):
+    with open("config.json") as f:
+        config = json.load(f)
+
+    env = Environment(loader=FileSystemLoader('templates'))
+    template = env.get_template("base_template.html")
+
+    output = template.render(
+        title=config["newsletter_title"],
+        stories=summaries,
+        sponsor=config["sponsor"]
+    )
+
+    os.makedirs("output", exist_ok=True)
+    with open("output/newsletter.html", "w", encoding="utf-8") as f:
+        f.write(output)
+```
+
+---
+
+### **9. ********`templates/base_template.html`******** – HTML Layout**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: auto; }
+    h1 { text-align: center; }
+    .story { margin-bottom: 20px; }
+    .sponsor { background-color: #f0f0f0; padding: 15px; margin-top: 40px; border-left: 4px solid #0077cc; }
+  </style>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+
+  {% for story in stories %}
+  <div class="story">
+    {{ story | safe }}
+  </div>
+  {% endfor %}
+
+  <div class="sponsor">
+    <strong>Sponsored by {{ sponsor.name }}</strong><br>
+    {{ sponsor.message }}<br>
+    <a href="{{ sponsor.link }}">Learn more</a>
+  </div>
+</body>
+</html>
+```
+
+---
+
+### **10. ********`main.py`******** – Orchestration Script**
+
+```python
+import json
+from scraper import fetch_articles
+from summarizer import summarize_article
+from builder import build_newsletter
+
+def run():
+    with open("config.json") as f:
+        config = json.load(f)
+
+    articles = fetch_articles(config["sources"])
+    summaries = []
+
+    for article in articles:
+        result = summarize_article(article["summary"])
+        summaries.append(result)
+
+    build_newsletter(summaries)
+    print("✅ Newsletter generated! Check /output/newsletter.html")
+
+if __name__ == "__main__":
+    run()
+```
+
+---
+
+### ✅ Final Instructions
+
+1. **Create a new Replit with the structure above**
+2. Add your `OPENAI_API_KEY` to Secrets
+3. Run `main.py`
+4. Output newsletter appears in `/output/newsletter.html`
+5. Copy/paste to Beehiiv or your email platform
+
+---
+
+## 📣 BONUS: Next Steps (Optional)
+
+* Add `replit.tasks` to run weekly (Replit Pro)
+* Build UI with Flask to preview before sending
+* Integrate Beehiiv API for direct publishing
+* Add filtering (e.g., tag by segment: sports, associations, etc.)
+
+---

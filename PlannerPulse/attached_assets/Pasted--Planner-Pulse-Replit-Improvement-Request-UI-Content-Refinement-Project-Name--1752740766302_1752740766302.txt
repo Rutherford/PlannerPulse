@@ -1,0 +1,115 @@
+---
+
+## 🛠 Planner Pulse – Replit Improvement Request (UI & Content Refinement)
+
+**Project Name:** `Planner Pulse – AI Newsletter Generator`
+**Version:** v1
+**Feedback Submitted By:** \[Mac]
+**Date:** July 17, 2025
+
+---
+
+### ✅ Overview
+
+The newsletter output is functional and structured — great job! Below are specific requests to improve visual hierarchy, readability, content polish, and branding for future versions.
+
+---
+
+### 🔧 Requested Improvements
+
+#### 1. **Improve Visual Hierarchy**
+
+* Make story titles stand out using larger font or `<h2>`
+* Style takeaways clearly: bold label + format consistently
+
+```html
+<h2 style="font-size: 20px;">{{ story.title }}</h2>
+<p>{{ story.summary }}</p>
+<p><strong>🔑 Key Takeaway:</strong> {{ story.takeaway }}</p>
+```
+
+---
+
+#### 2. **Clickable Article Titles**
+
+* Turn each story title into a clickable link (instead of separate “source” line)
+
+```html
+<h2><a href="{{ story.link }}" style="color:#0077cc; text-decoration:none;">{{ story.title }}</a></h2>
+```
+
+---
+
+#### 3. **Add Section Header**
+
+* Insert a top-level label before stories: `📰 Top Industry Stories`
+
+```html
+<h1 style="text-align:center;">📰 Top Industry Stories</h1>
+```
+
+---
+
+#### 4. **Polish Sponsor Block**
+
+* Add background color, optional logo, and styled CTA button
+
+```html
+<div class="sponsor" style="background-color:#f0f6ff; padding:20px; border-radius:12px;">
+  <strong>Sponsored by {{ sponsor.name }}</strong><br>
+  <p>{{ sponsor.message }}</p>
+  <a href="{{ sponsor.link }}" style="background:#0077cc; color:#fff; padding:10px 15px; text-decoration:none; border-radius:6px;">Learn More</a>
+</div>
+```
+
+---
+
+#### 5. **Trim Summaries + Improve Prompt**
+
+* Limit GPT summaries to 2–3 short sentences
+* Avoid duplicated title content or long quoted paragraphs
+
+🧠 Prompt Update:
+
+```
+Summarize this article in no more than 3 short sentences. Avoid repeating the title or quoting full sentences from the article.
+```
+
+---
+
+#### 6. **Generate Subject Line**
+
+* At the top of each newsletter, include a GPT-generated subject line (under 90 characters)
+* Example placement:
+
+```html
+<p style="font-size:14px; color:#555;"><em>Subject: Incentives Are Back | Hotel Tax Rising | $600M in New Venues</em></p>
+```
+
+🧠 Add prompt:
+
+```
+Suggest a short, engaging subject line summarizing the top 2–3 stories. Limit to 90 characters.
+```
+
+---
+
+#### 7. **Enhance Footer**
+
+* Add disclaimers, optional contact/unsubscribe links, and brand info
+
+```html
+<footer style="margin-top: 40px; font-size: 12px; text-align: center; color: #777;">
+  You’re receiving this because you’re a verified planner in the Connect Meetings community.<br>
+  © 2025 Planner Pulse · <a href="#">Unsubscribe</a> · <a href="#">Contact Us</a>
+</footer>
+```
+
+---
+
+### 🧩 Optional Enhancements for Later
+
+* Group stories by tags (e.g., Trends, Destinations, Tools)
+* Insert issue date at top: `📅 July 17, 2025`
+* Add GPT-generated preview text (used for email snippet)
+* Optimize for mobile display (max 700px width)
