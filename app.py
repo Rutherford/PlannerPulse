@@ -24,6 +24,14 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+# Secure secret key handling
+secret_key = os.environ.get('SECRET_KEY')
+if not secret_key:
+    import secrets
+    secret_key = secrets.token_hex(32)
+    logger.warning("No SECRET_KEY environment variable found. Generated a random key for this session. "
+                   "For production, set the SECRET_KEY environment variable to a secure random value.")
+=======
 
 # Generate a secure secret key
 secret_key = os.environ.get('SECRET_KEY')
@@ -52,25 +60,25 @@ def index():
     try:
         config = load_config()
         
-        # Initialize database managers
-        article_manager = DatabaseArticleManager()
-        sponsor_manager = DatabaseSponsorManager()
-        newsletter_manager = DatabaseNewsletterManager()
-        
-        # Get database statistics
-        article_stats = article_manager.get_stats()
-        sponsor_stats = sponsor_manager.get_sponsor_stats()
-        newsletter_stats = newsletter_manager.get_newsletter_stats()
-        
-        stats = {
-            'total_processed': article_stats.get('total_articles', 0),
-            'total_sponsors': sponsor_stats.get('total_sponsors', 0),
-            'current_sponsor': sponsor_manager.get_current_sponsor(),
-            'rss_sources': len(config.get("sources", [])),
-            'articles_today': article_stats.get('articles_today', 0),
-            'newsletters_today': newsletter_stats.get('newsletters_today', 0),
-            'total_newsletters': newsletter_stats.get('total_newsletters', 0)
-        }
+        # Initialize database managers using context managers
+        with DatabaseArticleManager() as article_manager, \
+             DatabaseSponsorManager() as sponsor_manager, \
+             DatabaseNewsletterManager() as newsletter_manager:
+            
+            # Get database statistics
+            article_stats = article_manager.get_stats()
+            sponsor_stats = sponsor_manager.get_sponsor_stats()
+            newsletter_stats = newsletter_manager.get_newsletter_stats()
+            
+            stats = {
+                'total_processed': article_stats.get('total_articles', 0),
+                'total_sponsors': sponsor_stats.get('total_sponsors', 0),
+                'current_sponsor': sponsor_manager.get_current_sponsor(),
+                'rss_sources': len(config.get("sources", [])),
+                'articles_today': article_stats.get('articles_today', 0),
+                'newsletters_today': newsletter_stats.get('newsletters_today', 0),
+                'total_newsletters': newsletter_stats.get('total_newsletters', 0)
+            }
         
         # Check if recent newsletter exists
         recent_newsletter = None
