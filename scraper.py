@@ -125,6 +125,19 @@ def get_full_article_content(url: str) -> str:
         Extracted text content
     """
     try:
+        # Validate URL before fetching
+        if not url or not url.startswith(('http://', 'https://')):
+            logger.debug(f"Invalid URL format: {url}")
+            return ""
+        
+        try:
+            response = requests.get(url, timeout=10, allow_redirects=True)
+            response.raise_for_status()
+            downloaded = trafilatura.fetch_url(url, html=response.text)
+        except requests.exceptions.RequestException as e:
+            logger.debug(f"URL fetch failed for {url}: {e}")
+            return ""
+        
         logger.debug(f"Fetching full content from: {url}")
         downloaded = trafilatura.fetch_url(url)
         if downloaded:
