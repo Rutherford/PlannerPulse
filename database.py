@@ -459,9 +459,6 @@ def migrate_existing_data():
     logger.info("Starting data migration from JSON to database...")
     
     try:
-
-        
-        # Migrate from JSON files
         from models import migrate_from_json
         migrate_from_json()
         
