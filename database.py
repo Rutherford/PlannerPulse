@@ -18,7 +18,26 @@ class DatabaseArticleManager:
     """Database-backed article management replacing JSON-based deduplicator"""
     
     def __init__(self):
-        self.session = get_session()
+        self._session = None
+    
+    @property
+    def session(self):
+        """Lazy session initialization"""
+        if self._session is None:
+            self._session = get_session()
+        return self._session
+    
+    def close_session(self):
+        """Close the database session"""
+        if self._session is not None:
+            self._session.close()
+            self._session = None
+    
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close_session()
     
     def is_duplicate(self, article: Dict) -> bool:
         """Check if article already exists in database"""
@@ -115,7 +134,26 @@ class DatabaseSponsorManager:
     """Database-backed sponsor management"""
     
     def __init__(self):
-        self.session = get_session()
+        self._session = None
+    
+    @property
+    def session(self):
+        """Lazy session initialization"""
+        if self._session is None:
+            self._session = get_session()
+        return self._session
+    
+    def close_session(self):
+        """Close the database session"""
+        if self._session is not None:
+            self._session.close()
+            self._session = None
+    
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close_session()
     
     def get_current_sponsor(self) -> Optional[Dict]:
         """Get the current sponsor based on rotation logic"""
@@ -152,8 +190,34 @@ class DatabaseSponsorManager:
             if not current:
                 return None
             
-            # Update last_used timestamp and increment appearances
-            sponsor = self.session.query(Sponsor).get(current['id'])
+            current_id = current['id']
+            
+            # Get next sponsor BEFORE updating current sponsor to avoid logic error
+            # Find all active sponsors except the current one
+            other_sponsors = self.session.query(Sponsor).filter(
+                Sponsor.active == True,
+                Sponsor.id != current_id
+            ).order_by(
+                desc(Sponsor.priority),
+                Sponsor.last_used.asc().nullsfirst()
+            ).all()
+            
+            # If there are other sponsors, select the next one
+            if other_sponsors:
+                next_sponsor_record = other_sponsors[0]
+                next_sponsor = {
+                    'id': next_sponsor_record.id,
+                    'name': next_sponsor_record.name,
+                    'message': next_sponsor_record.message,
+                    'link': next_sponsor_record.link,
+                    'active': next_sponsor_record.active
+                }
+            else:
+                # If only one sponsor, return the same one but update its usage
+                next_sponsor = current
+            
+            # Now update the current sponsor's last_used timestamp and increment appearances
+            sponsor = self.session.query(Sponsor).get(current_id)
             sponsor.last_used = datetime.utcnow()
             sponsor.total_appearances += 1
             
@@ -168,8 +232,6 @@ class DatabaseSponsorManager:
             
             self.session.commit()
             
-            # Get next sponsor
-            next_sponsor = self.get_current_sponsor()
             logger.info(f"Rotated sponsor: {current['name']} -> {next_sponsor['name'] if next_sponsor else 'None'}")
             
             return next_sponsor
@@ -265,7 +327,26 @@ class DatabaseNewsletterManager:
     """Database-backed newsletter management"""
     
     def __init__(self):
-        self.session = get_session()
+        self._session = None
+    
+    @property
+    def session(self):
+        """Lazy session initialization"""
+        if self._session is None:
+            self._session = get_session()
+        return self._session
+    
+    def close_session(self):
+        """Close the database session"""
+        if self._session is not None:
+            self._session.close()
+            self._session = None
+    
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close_session()
     
     def save_newsletter(self, newsletter_data: Dict, articles: List[Dict]) -> Optional[Newsletter]:
         """Save newsletter and associated articles to database"""
@@ -345,7 +426,26 @@ class DatabaseRSSManager:
     """Database-backed RSS source management"""
     
     def __init__(self):
-        self.session = get_session()
+        self._session = None
+    
+    @property
+    def session(self):
+        """Lazy session initialization"""
+        if self._session is None:
+            self._session = get_session()
+        return self._session
+    
+    def close_session(self):
+        """Close the database session"""
+        if self._session is not None:
+            self._session.close()
+            self._session = None
+    
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close_session()
     
     def get_active_sources(self) -> List[RSSSource]:
         """Get active RSS sources"""
