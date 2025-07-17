@@ -35,7 +35,7 @@ Implement proper session management using context managers and ensure sessions a
 ## Bug #2: Security Vulnerability - Hardcoded Development Secret Key
 
 ### Description
-**Location**: `app.py:25`
+**Location**: `app.py:26`
 **Type**: Security Vulnerability
 **Severity**: Critical
 
