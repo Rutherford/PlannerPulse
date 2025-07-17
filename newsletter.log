@@ -861,3 +861,924 @@
 2025-07-17 09:07:50,865 - INFO - Configuration loaded successfully
 2025-07-17 09:07:52,111 - INFO - 172.31.82.162 - - [17/Jul/2025 09:07:52] "GET /api/stats HTTP/1.1" 200 -
 2025-07-17 09:08:20,873 - INFO - Configuration loaded successfully
+2025-07-17 10:48:14,373 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.10.177:8080
+2025-07-17 10:48:14,373 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 10:48:14,374 - INFO -  * Restarting with stat
+2025-07-17 10:48:15,589 - WARNING -  * Debugger is active!
+2025-07-17 10:48:15,590 - INFO -  * Debugger PIN: 239-794-900
+2025-07-17 10:48:22,330 - INFO - Configuration loaded successfully
+2025-07-17 10:48:22,343 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:22,344 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:22,345 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:22,346 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:22,363 - INFO - 127.0.0.1 - - [17/Jul/2025 10:48:22] "GET / HTTP/1.1" 200 -
+2025-07-17 10:48:23,397 - INFO - 127.0.0.1 - - [17/Jul/2025 10:48:23] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 10:48:24,454 - INFO - 127.0.0.1 - - [17/Jul/2025 10:48:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-17 10:48:37,876 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:48:37,880 - INFO - 127.0.0.1 - - [17/Jul/2025 10:48:37] "POST /api/settings/test-api HTTP/1.1" 200 -
+2025-07-17 10:48:40,743 - INFO - Configuration loaded successfully
+2025-07-17 10:48:40,784 - INFO - OpenAI client initialized successfully
+2025-07-17 10:48:40,785 - INFO - 127.0.0.1 - - [17/Jul/2025 10:48:40] "POST /api/settings/api-key HTTP/1.1" 200 -
+2025-07-17 10:48:43,795 - INFO - 127.0.0.1 - - [17/Jul/2025 10:48:43] "GET /preview HTTP/1.1" 200 -
+2025-07-17 10:48:54,352 - INFO - Configuration loaded successfully
+2025-07-17 10:48:54,354 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:54,355 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:54,356 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:54,356 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:54,357 - INFO - 127.0.0.1 - - [17/Jul/2025 10:48:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:48:54,826 - INFO - Starting newsletter generation process
+2025-07-17 10:48:54,827 - INFO - Configuration loaded successfully
+2025-07-17 10:48:54,828 - INFO - Fetching articles from RSS sources
+2025-07-17 10:48:54,829 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 10:48:55,088 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 10:48:55,089 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 10:48:55,261 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 10:48:55,261 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 10:48:55,262 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 10:48:56,011 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 10:48:56,012 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 10:48:56,012 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 10:48:56,161 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 10:48:56,161 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 10:48:56,161 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 10:48:56,375 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 10:48:56,375 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 10:48:57,440 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 10:48:57,440 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 10:48:57,441 - INFO - Total articles fetched: 10
+2025-07-17 10:48:57,441 - INFO - Fetched 10 raw articles
+2025-07-17 10:48:57,441 - INFO - Deduplicating articles
+2025-07-17 10:48:57,443 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,443 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,444 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,445 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,448 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,451 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,452 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,452 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,453 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,455 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:48:57,456 - INFO - Filtered out 0 duplicate articles
+2025-07-17 10:48:57,456 - INFO - Found 10 new articles
+2025-07-17 10:48:57,456 - INFO - Found 10 new articles after deduplication
+2025-07-17 10:48:57,457 - INFO - Summarizing articles with GPT-4o
+2025-07-17 10:48:57,457 - INFO - Summarizing article 1/10: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 10:49:00,908 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:49:00,910 - INFO - Successfully summarized: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 10:49:00,910 - INFO - Summarizing article 2/10: Incentives Today Spring/Summer 2025
+2025-07-17 10:49:03,146 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:49:03,152 - INFO - Successfully summarized: Incentives Today Spring/Summer 2025
+2025-07-17 10:49:03,152 - INFO - Summarizing article 3/10: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 10:49:06,691 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:49:06,692 - INFO - Successfully summarized: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 10:49:06,693 - INFO - Summarizing article 4/10: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 10:49:08,440 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:49:08,444 - INFO - Successfully summarized: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 10:49:08,445 - INFO - Summarizing article 5/10: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 10:49:10,200 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:49:10,202 - INFO - Successfully summarized: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 10:49:10,202 - INFO - Summarizing article 6/10: Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
+2025-07-17 10:49:11,866 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:49:11,871 - INFO - Successfully summarized: Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
+2025-07-17 10:49:11,871 - INFO - Summarizing article 7/10: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 10:49:14,085 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:49:14,089 - INFO - Successfully summarized: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 10:49:14,089 - INFO - Summarizing article 8/10: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 10:49:16,690 - INFO -  * Detected change in '/workspaces/PlannerPulse/app.py', reloading
+2025-07-17 10:49:17,013 - INFO -  * Restarting with stat
+2025-07-17 10:49:18,570 - WARNING -  * Debugger is active!
+2025-07-17 10:49:18,570 - INFO -  * Debugger PIN: 239-794-900
+2025-07-17 10:49:18,878 - INFO - Configuration loaded successfully
+2025-07-17 10:49:18,892 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:18,894 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:18,895 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:18,895 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:18,920 - INFO - 127.0.0.1 - - [17/Jul/2025 10:49:18] "GET / HTTP/1.1" 200 -
+2025-07-17 10:49:19,810 - INFO - 127.0.0.1 - - [17/Jul/2025 10:49:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 10:49:32,662 - INFO - 127.0.0.1 - - [17/Jul/2025 10:49:32] "GET /preview HTTP/1.1" 200 -
+2025-07-17 10:49:45,439 - INFO -  * Detected change in '/workspaces/PlannerPulse/app.py', reloading
+2025-07-17 10:49:46,089 - INFO -  * Restarting with stat
+2025-07-17 10:49:47,730 - WARNING -  * Debugger is active!
+2025-07-17 10:49:47,731 - INFO -  * Debugger PIN: 239-794-900
+2025-07-17 10:49:48,027 - INFO - 127.0.0.1 - - [17/Jul/2025 10:49:48] "GET /preview HTTP/1.1" 200 -
+2025-07-17 10:49:51,135 - INFO - Configuration loaded successfully
+2025-07-17 10:49:51,159 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:51,161 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:51,162 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:51,163 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:49:51,166 - INFO - 127.0.0.1 - - [17/Jul/2025 10:49:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:50:21,755 - INFO - Configuration loaded successfully
+2025-07-17 10:50:21,758 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:21,759 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:21,760 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:21,760 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:21,761 - INFO - 127.0.0.1 - - [17/Jul/2025 10:50:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:50:48,827 - INFO - 127.0.0.1 - - [17/Jul/2025 10:50:48] "[33mGET /output/newsletter.md HTTP/1.1[0m" 404 -
+2025-07-17 10:50:51,828 - INFO - Configuration loaded successfully
+2025-07-17 10:50:51,830 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:51,831 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:51,831 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:51,832 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:50:51,832 - INFO - 127.0.0.1 - - [17/Jul/2025 10:50:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:50:53,423 - INFO - 127.0.0.1 - - [17/Jul/2025 10:50:53] "[33mGET /output/newsletter.html HTTP/1.1[0m" 404 -
+2025-07-17 10:51:21,071 - INFO - Configuration loaded successfully
+2025-07-17 10:51:21,073 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:21,073 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:21,074 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:21,075 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:21,075 - INFO - 127.0.0.1 - - [17/Jul/2025 10:51:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:51:50,936 - INFO - Configuration loaded successfully
+2025-07-17 10:51:50,939 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:50,942 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:50,943 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:50,945 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:51:50,946 - INFO - 127.0.0.1 - - [17/Jul/2025 10:51:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:52:20,196 - INFO -  * Detected change in '/workspaces/PlannerPulse/app.py', reloading
+2025-07-17 10:52:20,890 - INFO -  * Restarting with stat
+2025-07-17 10:52:22,019 - WARNING -  * Debugger is active!
+2025-07-17 10:52:22,020 - INFO -  * Debugger PIN: 239-794-900
+2025-07-17 10:52:22,281 - INFO - Configuration loaded successfully
+2025-07-17 10:52:22,295 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:22,296 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:22,297 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:22,298 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:22,299 - INFO - 127.0.0.1 - - [17/Jul/2025 10:52:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:52:40,824 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9000
+ * Running on http://10.0.10.177:9000
+2025-07-17 10:52:40,828 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 10:52:40,828 - INFO -  * Restarting with stat
+2025-07-17 10:52:42,976 - WARNING -  * Debugger is active!
+2025-07-17 10:52:42,977 - INFO -  * Debugger PIN: 239-794-900
+2025-07-17 10:52:47,554 - INFO - Configuration loaded successfully
+2025-07-17 10:52:47,567 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:47,568 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:47,569 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:47,569 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:47,587 - INFO - 127.0.0.1 - - [17/Jul/2025 10:52:47] "GET / HTTP/1.1" 200 -
+2025-07-17 10:52:48,678 - INFO - 127.0.0.1 - - [17/Jul/2025 10:52:48] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 10:52:49,733 - INFO - 127.0.0.1 - - [17/Jul/2025 10:52:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-17 10:52:53,069 - INFO - 127.0.0.1 - - [17/Jul/2025 10:52:53] "GET /preview HTTP/1.1" 200 -
+2025-07-17 10:52:55,969 - INFO - Starting newsletter generation process
+2025-07-17 10:52:55,969 - INFO - Configuration loaded successfully
+2025-07-17 10:52:55,971 - INFO - Fetching articles from RSS sources
+2025-07-17 10:52:55,971 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 10:52:56,227 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 10:52:56,228 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 10:52:56,494 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 10:52:56,495 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 10:52:56,495 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 10:52:56,762 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 10:52:56,763 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 10:52:56,763 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 10:52:56,881 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 10:52:56,881 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 10:52:56,882 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 10:52:56,961 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 10:52:56,962 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 10:52:57,258 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 10:52:57,258 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 10:52:57,258 - INFO - Total articles fetched: 10
+2025-07-17 10:52:57,258 - INFO - Fetched 10 raw articles
+2025-07-17 10:52:57,258 - INFO - Deduplicating articles
+2025-07-17 10:52:57,259 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,260 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,260 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,261 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,261 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,262 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,264 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,264 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,265 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,265 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:52:57,266 - INFO - Filtered out 0 duplicate articles
+2025-07-17 10:52:57,266 - INFO - Found 10 new articles
+2025-07-17 10:52:57,266 - INFO - Found 10 new articles after deduplication
+2025-07-17 10:52:57,266 - INFO - Summarizing articles with GPT-4o
+2025-07-17 10:52:57,266 - INFO - Summarizing article 1/10: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 10:52:59,588 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:52:59,592 - INFO - Successfully summarized: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 10:52:59,592 - INFO - Summarizing article 2/10: Incentives Today Spring/Summer 2025
+2025-07-17 10:53:00,809 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:00,815 - INFO - Successfully summarized: Incentives Today Spring/Summer 2025
+2025-07-17 10:53:00,815 - INFO - Summarizing article 3/10: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 10:53:03,637 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:03,645 - INFO - Successfully summarized: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 10:53:03,646 - INFO - Summarizing article 4/10: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 10:53:05,769 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:05,770 - INFO - Successfully summarized: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 10:53:05,771 - INFO - Summarizing article 5/10: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 10:53:07,824 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:07,825 - INFO - Successfully summarized: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 10:53:07,825 - INFO - Summarizing article 6/10: Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
+2025-07-17 10:53:09,553 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:09,556 - INFO - Successfully summarized: Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
+2025-07-17 10:53:09,556 - INFO - Summarizing article 7/10: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 10:53:11,153 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:11,156 - INFO - Successfully summarized: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 10:53:11,156 - INFO - Summarizing article 8/10: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 10:53:12,990 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:12,993 - INFO - Successfully summarized: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 10:53:12,994 - INFO - Summarizing article 9/10: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 10:53:15,183 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:15,185 - INFO - Successfully summarized: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 10:53:15,187 - INFO - Summarizing article 10/10: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 10:53:17,011 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:17,013 - INFO - Successfully summarized: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 10:53:17,013 - INFO - Successfully summarized 10 articles
+2025-07-17 10:53:17,013 - INFO - Generating newsletter subject line
+2025-07-17 10:53:17,827 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:53:17,831 - INFO - Generated subject line: Uncertain Business Travel | Irvings Wellness Edge | 5 Contract Solutions
+2025-07-17 10:53:17,832 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:17,833 - INFO - Building newsletter
+2025-07-17 10:53:17,844 - INFO - HTML newsletter created: output/newsletter.html
+2025-07-17 10:53:17,844 - INFO - Markdown newsletter created: output/newsletter.md
+2025-07-17 10:53:17,845 - INFO - Plain text newsletter created: output/newsletter.txt
+2025-07-17 10:53:17,845 - INFO - Newsletter built successfully in all formats
+2025-07-17 10:53:17,845 - ERROR - Error saving newsletter: 'NoneType' object has no attribute 'get'
+2025-07-17 10:53:17,846 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:17,847 - INFO - Rotated sponsor: None -> None
+2025-07-17 10:53:17,847 - INFO - Newsletter generation completed successfully
+2025-07-17 10:53:17,847 - INFO - Subject Line: Uncertain Business Travel | Irvings Wellness Edge | 5 Contract Solutions
+2025-07-17 10:53:17,847 - INFO - Articles included: 10
+2025-07-17 10:53:17,847 - ERROR - Newsletter generation failed: 'NoneType' object has no attribute 'get'
+2025-07-17 10:53:17,848 - INFO - 127.0.0.1 - - [17/Jul/2025 10:53:17] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2025-07-17 10:53:18,788 - INFO - Configuration loaded successfully
+2025-07-17 10:53:18,798 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,803 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,805 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,811 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,814 - INFO - 127.0.0.1 - - [17/Jul/2025 10:53:18] "GET / HTTP/1.1" 200 -
+2025-07-17 10:53:18,977 - INFO - Configuration loaded successfully
+2025-07-17 10:53:18,980 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,981 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,982 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,983 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:18,984 - INFO - 127.0.0.1 - - [17/Jul/2025 10:53:18] "GET / HTTP/1.1" 200 -
+2025-07-17 10:53:19,069 - INFO - 127.0.0.1 - - [17/Jul/2025 10:53:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 10:53:26,833 - INFO - 127.0.0.1 - - [17/Jul/2025 10:53:26] "GET /preview HTTP/1.1" 200 -
+2025-07-17 10:53:49,905 - INFO - Configuration loaded successfully
+2025-07-17 10:53:49,908 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:49,909 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:49,909 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:49,910 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:53:49,910 - INFO - 127.0.0.1 - - [17/Jul/2025 10:53:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:54:10,858 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:10,860 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:10] "POST /api/settings/test-api HTTP/1.1" 200 -
+2025-07-17 10:54:13,818 - INFO - Configuration loaded successfully
+2025-07-17 10:54:13,857 - INFO - OpenAI client initialized successfully
+2025-07-17 10:54:13,857 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:13] "POST /api/settings/api-key HTTP/1.1" 200 -
+2025-07-17 10:54:19,161 - INFO - Configuration loaded successfully
+2025-07-17 10:54:19,165 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:19,166 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:19,166 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:19,167 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:19,167 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:54:27,749 - INFO - Starting newsletter generation process
+2025-07-17 10:54:27,750 - INFO - Configuration loaded successfully
+2025-07-17 10:54:27,752 - INFO - Fetching articles from RSS sources
+2025-07-17 10:54:27,752 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 10:54:28,036 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 10:54:28,037 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 10:54:28,148 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 10:54:28,148 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 10:54:28,149 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 10:54:29,075 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 10:54:29,075 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 10:54:29,075 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 10:54:29,264 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 10:54:29,264 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 10:54:29,264 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 10:54:29,397 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 10:54:29,397 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 10:54:29,501 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 10:54:29,501 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 10:54:29,501 - INFO - Total articles fetched: 10
+2025-07-17 10:54:29,501 - INFO - Fetched 10 raw articles
+2025-07-17 10:54:29,501 - INFO - Deduplicating articles
+2025-07-17 10:54:29,502 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,503 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,506 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,507 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,508 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,509 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,510 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,510 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,511 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,512 - ERROR - Error checking for duplicate: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:29,512 - INFO - Filtered out 0 duplicate articles
+2025-07-17 10:54:29,512 - INFO - Found 10 new articles
+2025-07-17 10:54:29,512 - INFO - Found 10 new articles after deduplication
+2025-07-17 10:54:29,512 - INFO - Summarizing articles with GPT-4o
+2025-07-17 10:54:29,512 - INFO - Summarizing article 1/10: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 10:54:31,677 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:31,686 - INFO - Successfully summarized: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 10:54:31,687 - INFO - Summarizing article 2/10: Incentives Today Spring/Summer 2025
+2025-07-17 10:54:36,164 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:36,165 - INFO - Successfully summarized: Incentives Today Spring/Summer 2025
+2025-07-17 10:54:36,166 - INFO - Summarizing article 3/10: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 10:54:38,952 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:38,954 - INFO - Successfully summarized: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 10:54:38,954 - INFO - Summarizing article 4/10: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 10:54:40,367 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:40,368 - INFO - Successfully summarized: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 10:54:40,369 - INFO - Summarizing article 5/10: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 10:54:41,657 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:41,659 - INFO - Successfully summarized: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 10:54:41,659 - INFO - Summarizing article 6/10: Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
+2025-07-17 10:54:43,683 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:43,684 - INFO - Successfully summarized: Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
+2025-07-17 10:54:43,685 - INFO - Summarizing article 7/10: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 10:54:45,321 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:45,328 - INFO - Successfully summarized: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 10:54:45,328 - INFO - Summarizing article 8/10: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 10:54:46,989 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:46,995 - INFO - Successfully summarized: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 10:54:46,995 - INFO - Summarizing article 9/10: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 10:54:49,057 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:49,058 - INFO - Successfully summarized: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 10:54:49,058 - INFO - Summarizing article 10/10: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 10:54:50,548 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:50,549 - INFO - Successfully summarized: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 10:54:50,549 - INFO - Successfully summarized 10 articles
+2025-07-17 10:54:50,549 - INFO - Generating newsletter subject line
+2025-07-17 10:54:51,528 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 10:54:51,529 - INFO - Generated subject line: Irvings Wellness Edge | GBTA Uncertainty | 5 Contract Challenges Solved
+2025-07-17 10:54:51,531 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:51,531 - INFO - Building newsletter
+2025-07-17 10:54:51,557 - INFO - HTML newsletter created: output/newsletter.html
+2025-07-17 10:54:51,561 - INFO - Markdown newsletter created: output/newsletter.md
+2025-07-17 10:54:51,568 - INFO - Plain text newsletter created: output/newsletter.txt
+2025-07-17 10:54:51,568 - INFO - Newsletter built successfully in all formats
+2025-07-17 10:54:51,569 - ERROR - Error saving newsletter: 'NoneType' object has no attribute 'get'
+2025-07-17 10:54:51,572 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:51,573 - INFO - Rotated sponsor: None -> None
+2025-07-17 10:54:51,573 - INFO - Newsletter generation completed successfully
+2025-07-17 10:54:51,575 - INFO - Subject Line: Irvings Wellness Edge | GBTA Uncertainty | 5 Contract Challenges Solved
+2025-07-17 10:54:51,576 - INFO - Articles included: 10
+2025-07-17 10:54:51,576 - ERROR - Newsletter generation failed: 'NoneType' object has no attribute 'get'
+2025-07-17 10:54:51,577 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:51] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2025-07-17 10:54:51,882 - INFO - Configuration loaded successfully
+2025-07-17 10:54:51,884 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:51,885 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:51,886 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:51,886 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:51,887 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:54:52,444 - INFO - Configuration loaded successfully
+2025-07-17 10:54:52,449 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,450 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,451 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,452 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,453 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:52] "GET / HTTP/1.1" 200 -
+2025-07-17 10:54:52,504 - INFO - Configuration loaded successfully
+2025-07-17 10:54:52,506 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,507 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,508 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,508 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:54:52,509 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:52] "GET / HTTP/1.1" 200 -
+2025-07-17 10:54:53,385 - INFO - 127.0.0.1 - - [17/Jul/2025 10:54:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 10:55:14,635 - INFO - 127.0.0.1 - - [17/Jul/2025 10:55:14] "GET /preview HTTP/1.1" 200 -
+2025-07-17 10:55:25,756 - INFO - Configuration loaded successfully
+2025-07-17 10:55:25,758 - ERROR - Error getting article stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:55:25,759 - ERROR - Error getting sponsor stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:55:25,760 - ERROR - Error getting newsletter stats: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:55:25,760 - ERROR - Error getting current sponsor: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-17 10:55:25,761 - INFO - 127.0.0.1 - - [17/Jul/2025 10:55:25] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 10:55:50,279 - INFO -  * Detected change in '/workspaces/PlannerPulse/app.py', reloading
+2025-07-17 10:55:50,476 - INFO -  * Restarting with stat
+2025-07-17 10:55:51,498 - WARNING -  * Debugger is active!
+2025-07-17 10:55:51,498 - INFO -  * Debugger PIN: 239-794-900
