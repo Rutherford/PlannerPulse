@@ -460,9 +460,6 @@ def migrate_existing_data():
     
     try:
         # Initialize managers
-        article_manager = DatabaseArticleManager()
-        sponsor_manager = DatabaseSponsorManager()
-        rss_manager = DatabaseRSSManager()
         
         # Migrate from JSON files
         from models import migrate_from_json
