@@ -1,0 +1,863 @@
+2025-07-17 08:17:07,084 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:17:07,084 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:17:07,088 - INFO -  * Restarting with stat
+2025-07-17 08:17:08,178 - WARNING -  * Debugger is active!
+2025-07-17 08:17:08,179 - INFO -  * Debugger PIN: 834-911-589
+2025-07-17 08:17:08,265 - INFO - Configuration loaded successfully
+2025-07-17 08:17:08,265 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:17:08,265 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:17:08,281 - INFO - 172.31.82.162 - - [17/Jul/2025 08:17:08] "GET / HTTP/1.1" 200 -
+2025-07-17 08:17:08,374 - INFO - 172.31.82.162 - - [17/Jul/2025 08:17:08] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:17:18,273 - INFO - Configuration loaded successfully
+2025-07-17 08:17:18,273 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:17:18,273 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:17:18,274 - INFO - 127.0.0.1 - - [17/Jul/2025 08:17:18] "GET / HTTP/1.1" 200 -
+2025-07-17 08:17:18,282 - INFO - 127.0.0.1 - - [17/Jul/2025 08:17:18] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:17:38,662 - INFO - Configuration loaded successfully
+2025-07-17 08:17:38,662 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:17:38,662 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:17:38,663 - INFO - 172.31.82.162 - - [17/Jul/2025 08:17:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:18:08,669 - INFO - Configuration loaded successfully
+2025-07-17 08:18:08,669 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:18:08,669 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:18:08,669 - INFO - 172.31.82.162 - - [17/Jul/2025 08:18:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:18:38,672 - INFO - Configuration loaded successfully
+2025-07-17 08:18:38,673 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:18:38,673 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:18:38,674 - INFO - 172.31.82.162 - - [17/Jul/2025 08:18:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:19:08,675 - INFO - Configuration loaded successfully
+2025-07-17 08:19:08,675 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:19:08,675 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:19:08,676 - INFO - 172.31.82.162 - - [17/Jul/2025 08:19:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:19:38,662 - INFO - Configuration loaded successfully
+2025-07-17 08:19:38,663 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:19:38,663 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:19:38,663 - INFO - 172.31.82.162 - - [17/Jul/2025 08:19:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:20:02,631 - INFO - Starting newsletter generation process
+2025-07-17 08:20:02,631 - INFO - Configuration loaded successfully
+2025-07-17 08:20:02,632 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:20:02,632 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:20:02,632 - INFO - Fetching articles from RSS sources
+2025-07-17 08:20:02,632 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 08:20:02,902 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 08:20:02,903 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 08:20:03,235 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 08:20:03,235 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 08:20:03,235 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:20:04,180 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:20:04,180 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 08:20:04,180 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:20:04,318 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:20:04,318 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 08:20:04,318 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 08:20:04,682 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 08:20:04,682 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 08:20:05,613 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 08:20:05,613 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 08:20:05,613 - INFO - Fetching from RSS feed: https://www.meetingsnet.com/rss.xml
+2025-07-17 08:20:05,774 - INFO - Found 50 entries in MeetingsNet - The meeting, convention, and incentive travel industry’s top source for news, trends, and strategies.
+2025-07-17 08:20:05,775 - INFO - Total articles fetched: 15
+2025-07-17 08:20:05,775 - INFO - Fetched 15 raw articles
+2025-07-17 08:20:05,775 - INFO - Deduplicating articles
+2025-07-17 08:20:05,779 - INFO - Filtered out 0 duplicate articles
+2025-07-17 08:20:05,779 - INFO - Found 15 new articles
+2025-07-17 08:20:05,779 - INFO - Found 15 new articles after deduplication
+2025-07-17 08:20:05,779 - INFO - Summarizing articles with GPT-4o
+2025-07-17 08:20:05,779 - INFO - Summarizing article 1/15: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 08:20:08,660 - INFO - Configuration loaded successfully
+2025-07-17 08:20:08,660 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:20:08,660 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:20:08,660 - INFO - 172.31.82.162 - - [17/Jul/2025 08:20:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:20:10,753 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:10,760 - INFO - Successfully summarized: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 08:20:10,760 - INFO - Summarizing article 2/15: Incentives Today Spring/Summer 2025
+2025-07-17 08:20:14,055 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:14,057 - INFO - Successfully summarized: Incentives Today Spring/Summer 2025
+2025-07-17 08:20:14,057 - INFO - Summarizing article 3/15: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 08:20:20,376 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:20,379 - INFO - Successfully summarized: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 08:20:20,379 - INFO - Summarizing article 4/15: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 08:20:23,999 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:24,000 - INFO - Successfully summarized: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 08:20:24,000 - INFO - Summarizing article 5/15: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 08:20:29,890 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:29,892 - INFO - Successfully summarized: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 08:20:29,892 - INFO - Summarizing article 6/15: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 08:20:32,141 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:32,143 - INFO - Successfully summarized: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 08:20:32,143 - INFO - Summarizing article 7/15: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 08:20:36,175 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:36,179 - INFO - Successfully summarized: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 08:20:36,179 - INFO - Summarizing article 8/15: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 08:20:38,670 - INFO - Configuration loaded successfully
+2025-07-17 08:20:38,670 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:20:38,670 - INFO - No existing sponsor state found, starting fresh
+2025-07-17 08:20:38,671 - INFO - 172.31.82.162 - - [17/Jul/2025 08:20:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:20:38,918 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:38,925 - INFO - Successfully summarized: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 08:20:38,926 - INFO - Summarizing article 9/15: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 08:20:42,652 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:42,662 - INFO - Successfully summarized: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 08:20:42,662 - INFO - Summarizing article 10/15: Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+2025-07-17 08:20:46,368 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:46,370 - INFO - Successfully summarized: Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+2025-07-17 08:20:46,371 - INFO - Summarizing article 11/15: Hosted-Buyer Events for Meeting Planners Are Hot
+2025-07-17 08:20:49,210 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:49,212 - INFO - Successfully summarized: Hosted-Buyer Events for Meeting Planners Are Hot
+2025-07-17 08:20:49,212 - INFO - Summarizing article 12/15: Recovery—with an Asterisk—for San Francisco
+2025-07-17 08:20:51,521 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:51,526 - INFO - Successfully summarized: Recovery—with an Asterisk—for San Francisco
+2025-07-17 08:20:51,526 - INFO - Summarizing article 13/15: Event Trend: Sustainability with Teeth
+2025-07-17 08:20:54,988 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:20:54,996 - INFO - Successfully summarized: Event Trend: Sustainability with Teeth
+2025-07-17 08:20:54,997 - INFO - Summarizing article 14/15: A New Era Begins for the Fairmont Breakers Long Beach
+2025-07-17 08:21:01,154 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:21:01,159 - INFO - Successfully summarized: A New Era Begins for the Fairmont Breakers Long Beach
+2025-07-17 08:21:01,160 - INFO - Summarizing article 15/15: Are Regional Meetings a Solution for Lowering Carbon Emissions?
+2025-07-17 08:21:03,944 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:21:03,946 - INFO - Successfully summarized: Are Regional Meetings a Solution for Lowering Carbon Emissions?
+2025-07-17 08:21:03,946 - INFO - Successfully summarized 15 articles
+2025-07-17 08:21:03,946 - INFO - Generating newsletter subject line
+2025-07-17 08:21:04,814 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:21:04,816 - INFO - Generated subject line: Planner Pulse: Navigate Business Travel Uncertainty Now
+2025-07-17 08:21:04,816 - INFO - Building newsletter
+2025-07-17 08:21:04,835 - INFO - HTML newsletter created: output/newsletter.html
+2025-07-17 08:21:04,839 - INFO - Markdown newsletter created: output/newsletter.md
+2025-07-17 08:21:04,841 - INFO - Plain text newsletter created: output/newsletter.txt
+2025-07-17 08:21:04,842 - INFO - Newsletter built successfully in all formats
+2025-07-17 08:21:04,843 - INFO - Marked 15 articles as processed
+2025-07-17 08:21:04,843 - INFO - Rotated sponsor: Visit St. Pete Clearwater -> Meet Boston
+2025-07-17 08:21:04,844 - INFO - Newsletter generation completed successfully
+2025-07-17 08:21:04,844 - INFO - Subject Line: Planner Pulse: Navigate Business Travel Uncertainty Now
+2025-07-17 08:21:04,844 - INFO - Articles included: 15
+2025-07-17 08:21:04,845 - INFO - Current sponsor: Visit St. Pete Clearwater
+2025-07-17 08:21:04,846 - INFO - 172.31.82.162 - - [17/Jul/2025 08:21:04] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2025-07-17 08:21:04,894 - INFO - Configuration loaded successfully
+2025-07-17 08:21:04,895 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:21:04,895 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:21:04,895 - INFO - 172.31.82.162 - - [17/Jul/2025 08:21:04] "GET / HTTP/1.1" 200 -
+2025-07-17 08:21:04,940 - INFO - Configuration loaded successfully
+2025-07-17 08:21:04,942 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:21:04,942 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:21:04,943 - INFO - 172.31.82.162 - - [17/Jul/2025 08:21:04] "GET / HTTP/1.1" 200 -
+2025-07-17 08:21:05,010 - INFO - 172.31.82.162 - - [17/Jul/2025 08:21:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:21:13,638 - INFO - 172.31.82.162 - - [17/Jul/2025 08:21:13] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:21:13,774 - INFO - 172.31.82.162 - - [17/Jul/2025 08:21:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-17 08:21:35,198 - INFO - Configuration loaded successfully
+2025-07-17 08:21:35,198 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:21:35,198 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:21:35,199 - INFO - 172.31.82.162 - - [17/Jul/2025 08:21:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:22:05,198 - INFO - Configuration loaded successfully
+2025-07-17 08:22:05,198 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:22:05,199 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:22:05,199 - INFO - 172.31.82.162 - - [17/Jul/2025 08:22:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:22:35,187 - INFO - Configuration loaded successfully
+2025-07-17 08:22:35,187 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:22:35,187 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:22:35,188 - INFO - 172.31.82.162 - - [17/Jul/2025 08:22:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:23:05,198 - INFO - Configuration loaded successfully
+2025-07-17 08:23:05,198 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:23:05,199 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:23:05,199 - INFO - 172.31.82.162 - - [17/Jul/2025 08:23:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:23:35,198 - INFO - Configuration loaded successfully
+2025-07-17 08:23:35,199 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:23:35,199 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:23:35,199 - INFO - 172.31.82.162 - - [17/Jul/2025 08:23:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:24:05,196 - INFO - Configuration loaded successfully
+2025-07-17 08:24:05,197 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:24:05,197 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:24:05,198 - INFO - 172.31.82.162 - - [17/Jul/2025 08:24:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:24:30,010 - INFO - 172.31.82.162 - - [17/Jul/2025 08:24:30] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:24:35,187 - INFO - Configuration loaded successfully
+2025-07-17 08:24:35,187 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:24:35,189 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:24:35,190 - INFO - 172.31.82.162 - - [17/Jul/2025 08:24:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:25:05,201 - INFO - Configuration loaded successfully
+2025-07-17 08:25:05,201 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:25:05,202 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:25:05,202 - INFO - 172.31.82.162 - - [17/Jul/2025 08:25:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:25:35,187 - INFO - Configuration loaded successfully
+2025-07-17 08:25:35,188 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:25:35,189 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:25:35,189 - INFO - 172.31.82.162 - - [17/Jul/2025 08:25:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:26:05,187 - INFO - Configuration loaded successfully
+2025-07-17 08:26:05,187 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:26:05,188 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:26:05,188 - INFO - 172.31.82.162 - - [17/Jul/2025 08:26:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:26:35,188 - INFO - Configuration loaded successfully
+2025-07-17 08:26:35,188 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:26:35,189 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:26:35,189 - INFO - 172.31.82.162 - - [17/Jul/2025 08:26:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:27:05,191 - INFO - Configuration loaded successfully
+2025-07-17 08:27:05,192 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:27:05,192 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:27:05,192 - INFO - 172.31.82.162 - - [17/Jul/2025 08:27:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:27:35,191 - INFO - Configuration loaded successfully
+2025-07-17 08:27:35,191 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:27:35,191 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:27:35,191 - INFO - 172.31.82.162 - - [17/Jul/2025 08:27:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:27:51,147 - INFO - 172.31.82.162 - - [17/Jul/2025 08:27:51] "[33mGET /output/newsletter.html HTTP/1.1[0m" 404 -
+2025-07-17 08:27:54,305 - INFO - 172.31.82.162 - - [17/Jul/2025 08:27:54] "[33mGET /output/newsletter.md HTTP/1.1[0m" 404 -
+2025-07-17 08:27:55,202 - INFO - 172.31.82.162 - - [17/Jul/2025 08:27:55] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:28:05,195 - INFO - Configuration loaded successfully
+2025-07-17 08:28:05,195 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:28:05,196 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:28:05,196 - INFO - 172.31.82.162 - - [17/Jul/2025 08:28:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:28:34,082 - INFO - 172.31.82.162 - - [17/Jul/2025 08:28:34] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:28:35,190 - INFO - Configuration loaded successfully
+2025-07-17 08:28:35,191 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:28:35,191 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:28:35,191 - INFO - 172.31.82.162 - - [17/Jul/2025 08:28:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:28:50,100 - INFO -  * Detected change in '/home/runner/workspace/summarizer.py', reloading
+2025-07-17 08:28:50,248 - INFO -  * Restarting with stat
+2025-07-17 08:28:51,348 - WARNING -  * Debugger is active!
+2025-07-17 08:28:51,349 - INFO -  * Debugger PIN: 563-163-279
+2025-07-17 08:29:05,190 - INFO - Configuration loaded successfully
+2025-07-17 08:29:05,191 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:29:05,191 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:29:05,191 - INFO - 172.31.82.162 - - [17/Jul/2025 08:29:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:29:11,833 - INFO -  * Detected change in '/home/runner/workspace/summarizer.py', reloading
+2025-07-17 08:29:11,928 - INFO -  * Restarting with stat
+2025-07-17 08:29:12,840 - WARNING -  * Debugger is active!
+2025-07-17 08:29:12,841 - INFO -  * Debugger PIN: 104-077-545
+2025-07-17 08:29:28,054 - INFO -  * Detected change in '/home/runner/workspace/builder.py', reloading
+2025-07-17 08:29:28,166 - INFO -  * Restarting with stat
+2025-07-17 08:29:29,307 - WARNING -  * Debugger is active!
+2025-07-17 08:29:29,310 - INFO -  * Debugger PIN: 145-709-817
+2025-07-17 08:29:35,194 - INFO - Configuration loaded successfully
+2025-07-17 08:29:35,194 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:29:35,195 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:29:35,195 - INFO - 172.31.82.162 - - [17/Jul/2025 08:29:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:29:39,930 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:29:39,932 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:29:39,933 - INFO -  * Restarting with stat
+2025-07-17 08:29:41,199 - WARNING -  * Debugger is active!
+2025-07-17 08:29:41,203 - INFO -  * Debugger PIN: 102-682-565
+2025-07-17 08:29:41,288 - INFO - Configuration loaded successfully
+2025-07-17 08:29:41,289 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:29:41,289 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:29:41,310 - INFO - 172.31.82.162 - - [17/Jul/2025 08:29:41] "GET / HTTP/1.1" 200 -
+2025-07-17 08:29:41,388 - INFO - 172.31.82.162 - - [17/Jul/2025 08:29:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:29:48,524 - INFO - Starting newsletter generation process
+2025-07-17 08:29:48,524 - INFO - Configuration loaded successfully
+2025-07-17 08:29:48,525 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:29:48,526 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:29:48,527 - INFO - Fetching articles from RSS sources
+2025-07-17 08:29:48,527 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 08:29:48,809 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 08:29:48,810 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 08:29:49,043 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 08:29:49,044 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 08:29:49,044 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:29:50,259 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:29:50,260 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 08:29:50,260 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:29:50,362 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:29:50,363 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 08:29:50,363 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 08:29:50,645 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 08:29:50,646 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 08:29:50,855 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 08:29:50,855 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 08:29:50,856 - INFO - Fetching from RSS feed: https://www.meetingsnet.com/rss.xml
+2025-07-17 08:29:51,035 - INFO - Found 50 entries in MeetingsNet - The meeting, convention, and incentive travel industry’s top source for news, trends, and strategies.
+2025-07-17 08:29:51,035 - INFO - Total articles fetched: 15
+2025-07-17 08:29:51,035 - INFO - Fetched 15 raw articles
+2025-07-17 08:29:51,036 - INFO - Deduplicating articles
+2025-07-17 08:29:51,036 - INFO - Filtered out 15 duplicate articles
+2025-07-17 08:29:51,037 - INFO - Found 0 new articles
+2025-07-17 08:29:51,037 - INFO - Found 0 new articles after deduplication
+2025-07-17 08:29:51,037 - WARNING - No new articles found. Newsletter generation skipped.
+2025-07-17 08:30:07,276 - INFO - Starting newsletter generation process
+2025-07-17 08:30:07,277 - INFO - Configuration loaded successfully
+2025-07-17 08:30:07,278 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:30:07,279 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:30:07,280 - INFO - Fetching articles from RSS sources
+2025-07-17 08:30:07,280 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 08:30:07,650 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 08:30:07,651 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 08:30:07,835 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 08:30:07,836 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 08:30:07,836 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:30:08,345 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:30:08,346 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 08:30:08,347 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:30:08,453 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:30:08,453 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 08:30:08,453 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 08:30:08,736 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 08:30:08,739 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 08:30:08,850 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 08:30:08,852 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 08:30:08,852 - INFO - Fetching from RSS feed: https://www.meetingsnet.com/rss.xml
+2025-07-17 08:30:09,006 - INFO - Found 50 entries in MeetingsNet - The meeting, convention, and incentive travel industry’s top source for news, trends, and strategies.
+2025-07-17 08:30:09,009 - INFO - Total articles fetched: 15
+2025-07-17 08:30:09,015 - INFO - Fetched 15 raw articles
+2025-07-17 08:30:09,023 - INFO - Deduplicating articles
+2025-07-17 08:30:09,028 - INFO - Filtered out 0 duplicate articles
+2025-07-17 08:30:09,028 - INFO - Found 15 new articles
+2025-07-17 08:30:09,028 - INFO - Found 15 new articles after deduplication
+2025-07-17 08:30:09,028 - INFO - Summarizing articles with GPT-4o
+2025-07-17 08:30:09,028 - INFO - Summarizing article 1/15: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 08:30:11,630 - INFO - Configuration loaded successfully
+2025-07-17 08:30:11,631 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:30:11,631 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:30:11,632 - INFO - 172.31.82.162 - - [17/Jul/2025 08:30:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:30:12,248 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:12,257 - INFO - Successfully summarized: New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
+2025-07-17 08:30:12,258 - INFO - Summarizing article 2/15: Incentives Today Spring/Summer 2025
+2025-07-17 08:30:14,501 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:14,504 - INFO - Successfully summarized: Incentives Today Spring/Summer 2025
+2025-07-17 08:30:14,504 - INFO - Summarizing article 3/15: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 08:30:17,121 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:17,123 - INFO - Successfully summarized: How Irving, Texas, Excels in Its Wellness Offerings for Groups
+2025-07-17 08:30:17,124 - INFO - Summarizing article 4/15: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 08:30:20,894 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:20,897 - INFO - Successfully summarized: Why Irving, Texas, Excels in Wellness and Hyper-Personalization
+2025-07-17 08:30:20,897 - INFO - Summarizing article 5/15: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 08:30:23,401 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:23,404 - INFO - Successfully summarized: 5 Meetings Contract Challenges and Solutions for Uncertain Times
+2025-07-17 08:30:23,404 - INFO - Summarizing article 6/15: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 08:30:25,638 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:25,645 - INFO - Successfully summarized: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 08:30:25,646 - INFO - Summarizing article 7/15: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 08:30:29,030 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:29,034 - INFO - Successfully summarized: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 08:30:29,034 - INFO - Summarizing article 8/15: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 08:30:30,733 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:30,736 - INFO - Successfully summarized: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 08:30:30,736 - INFO - Summarizing article 9/15: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 08:30:32,591 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:32,594 - INFO - Successfully summarized: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 08:30:32,595 - INFO - Summarizing article 10/15: Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+2025-07-17 08:30:34,719 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:34,723 - INFO - Successfully summarized: Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+2025-07-17 08:30:34,723 - INFO - Summarizing article 11/15: Hosted-Buyer Events for Meeting Planners Are Hot
+2025-07-17 08:30:37,171 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:37,173 - INFO - Successfully summarized: Hosted-Buyer Events for Meeting Planners Are Hot
+2025-07-17 08:30:37,173 - INFO - Summarizing article 12/15: Recovery—with an Asterisk—for San Francisco
+2025-07-17 08:30:38,767 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:38,768 - INFO - Successfully summarized: Recovery—with an Asterisk—for San Francisco
+2025-07-17 08:30:38,769 - INFO - Summarizing article 13/15: Event Trend: Sustainability with Teeth
+2025-07-17 08:30:40,674 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:40,676 - INFO - Successfully summarized: Event Trend: Sustainability with Teeth
+2025-07-17 08:30:40,677 - INFO - Summarizing article 14/15: A New Era Begins for the Fairmont Breakers Long Beach
+2025-07-17 08:30:41,636 - INFO - Configuration loaded successfully
+2025-07-17 08:30:41,636 - INFO - Loaded 0 processed URLs from history
+2025-07-17 08:30:41,636 - INFO - Loaded sponsor state: index 1
+2025-07-17 08:30:41,637 - INFO - 172.31.82.162 - - [17/Jul/2025 08:30:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:30:43,682 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:43,685 - INFO - Successfully summarized: A New Era Begins for the Fairmont Breakers Long Beach
+2025-07-17 08:30:43,685 - INFO - Summarizing article 15/15: Are Regional Meetings a Solution for Lowering Carbon Emissions?
+2025-07-17 08:30:45,068 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:45,070 - INFO - Successfully summarized: Are Regional Meetings a Solution for Lowering Carbon Emissions?
+2025-07-17 08:30:45,070 - INFO - Successfully summarized 15 articles
+2025-07-17 08:30:45,071 - INFO - Generating newsletter subject line
+2025-07-17 08:30:45,802 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:30:45,805 - INFO - Generated subject line: GBTA Travel Decline • Irvings Wellness Edge • 5 Contract Challenges
+2025-07-17 08:30:45,806 - INFO - Building newsletter
+2025-07-17 08:30:45,821 - INFO - HTML newsletter created: output/newsletter.html
+2025-07-17 08:30:45,822 - INFO - Markdown newsletter created: output/newsletter.md
+2025-07-17 08:30:45,824 - INFO - Plain text newsletter created: output/newsletter.txt
+2025-07-17 08:30:45,825 - INFO - Newsletter built successfully in all formats
+2025-07-17 08:30:45,826 - INFO - Marked 15 articles as processed
+2025-07-17 08:30:45,827 - INFO - Rotated sponsor: Meet Boston -> Visit Orlando
+2025-07-17 08:30:45,827 - INFO - Newsletter generation completed successfully
+2025-07-17 08:30:45,827 - INFO - Subject Line: GBTA Travel Decline • Irvings Wellness Edge • 5 Contract Challenges
+2025-07-17 08:30:45,828 - INFO - Articles included: 15
+2025-07-17 08:30:45,828 - INFO - Current sponsor: Meet Boston
+2025-07-17 08:31:07,414 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:31:07,414 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:31:07,415 - INFO -  * Restarting with stat
+2025-07-17 08:31:08,312 - WARNING -  * Debugger is active!
+2025-07-17 08:31:08,313 - INFO -  * Debugger PIN: 136-068-606
+2025-07-17 08:31:08,380 - INFO - Configuration loaded successfully
+2025-07-17 08:31:08,381 - INFO - Configuration loaded successfully
+2025-07-17 08:31:08,381 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:31:08,382 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:31:08,382 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:31:08,382 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:31:08,399 - INFO - 172.31.82.162 - - [17/Jul/2025 08:31:08] "GET / HTTP/1.1" 200 -
+2025-07-17 08:31:08,402 - INFO - 127.0.0.1 - - [17/Jul/2025 08:31:08] "GET / HTTP/1.1" 200 -
+2025-07-17 08:31:08,418 - INFO - 127.0.0.1 - - [17/Jul/2025 08:31:08] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:31:08,469 - INFO - 172.31.82.162 - - [17/Jul/2025 08:31:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:31:38,707 - INFO - Configuration loaded successfully
+2025-07-17 08:31:38,708 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:31:38,708 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:31:38,708 - INFO - 172.31.82.162 - - [17/Jul/2025 08:31:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:32:08,700 - INFO - Configuration loaded successfully
+2025-07-17 08:32:08,701 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:32:08,701 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:32:08,701 - INFO - 172.31.82.162 - - [17/Jul/2025 08:32:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:32:26,549 - INFO - Configuration loaded successfully
+2025-07-17 08:32:26,550 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:32:26,550 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:32:26,551 - INFO - 172.31.82.162 - - [17/Jul/2025 08:32:26] "GET / HTTP/1.1" 200 -
+2025-07-17 08:32:26,621 - INFO - 172.31.82.162 - - [17/Jul/2025 08:32:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:32:56,862 - INFO - Configuration loaded successfully
+2025-07-17 08:32:56,863 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:32:56,864 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:32:56,864 - INFO - 172.31.82.162 - - [17/Jul/2025 08:32:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:33:26,851 - INFO - Configuration loaded successfully
+2025-07-17 08:33:26,851 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:33:26,851 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:33:26,852 - INFO - 172.31.82.162 - - [17/Jul/2025 08:33:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:33:56,863 - INFO - Configuration loaded successfully
+2025-07-17 08:33:56,863 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:33:56,864 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:33:56,864 - INFO - 172.31.82.162 - - [17/Jul/2025 08:33:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:34:26,863 - INFO - Configuration loaded successfully
+2025-07-17 08:34:26,863 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:34:26,863 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:34:26,864 - INFO - 172.31.82.162 - - [17/Jul/2025 08:34:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:34:27,227 - INFO -  * Detected change in '/home/runner/workspace/app.py', reloading
+2025-07-17 08:34:27,366 - INFO -  * Restarting with stat
+2025-07-17 08:34:28,510 - WARNING -  * Debugger is active!
+2025-07-17 08:34:28,511 - INFO -  * Debugger PIN: 151-964-285
+2025-07-17 08:34:49,105 - INFO - Starting newsletter generation process
+2025-07-17 08:34:49,108 - INFO - Configuration loaded successfully
+2025-07-17 08:34:49,108 - INFO - Loaded 15 processed URLs from history
+2025-07-17 08:34:49,109 - INFO - Loaded sponsor state: index 2
+2025-07-17 08:34:49,109 - INFO - Fetching articles from RSS sources
+2025-07-17 08:34:49,109 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 08:34:49,347 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 08:34:49,348 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 08:34:49,511 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 08:34:49,511 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 08:34:49,511 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:34:49,922 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:34:49,922 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 08:34:49,922 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:34:50,005 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:34:50,005 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 08:34:50,005 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 08:34:50,224 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 08:34:50,225 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 08:34:50,420 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 08:34:50,420 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 08:34:50,421 - INFO - Fetching from RSS feed: https://www.meetingsnet.com/rss.xml
+2025-07-17 08:34:50,552 - INFO - Found 50 entries in MeetingsNet - The meeting, convention, and incentive travel industry’s top source for news, trends, and strategies.
+2025-07-17 08:34:50,552 - INFO - Total articles fetched: 15
+2025-07-17 08:34:50,552 - INFO - Fetched 15 raw articles
+2025-07-17 08:34:50,553 - INFO - Deduplicating articles
+2025-07-17 08:34:50,553 - INFO - Filtered out 15 duplicate articles
+2025-07-17 08:34:50,553 - INFO - Found 0 new articles
+2025-07-17 08:34:50,553 - INFO - Found 0 new articles after deduplication
+2025-07-17 08:34:50,553 - WARNING - No new articles found. Newsletter generation skipped.
+2025-07-17 08:34:50,554 - INFO - 172.31.82.162 - - [17/Jul/2025 08:34:50] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2025-07-17 08:34:50,590 - INFO - Configuration loaded successfully
+2025-07-17 08:34:50,590 - ERROR - Error loading dashboard: name 'ArticleDeduplicator' is not defined
+2025-07-17 08:34:50,601 - INFO - 172.31.82.162 - - [17/Jul/2025 08:34:50] "GET / HTTP/1.1" 200 -
+2025-07-17 08:34:50,645 - INFO - Configuration loaded successfully
+2025-07-17 08:34:50,646 - ERROR - Error loading dashboard: name 'ArticleDeduplicator' is not defined
+2025-07-17 08:34:50,646 - INFO - 172.31.82.162 - - [17/Jul/2025 08:34:50] "GET / HTTP/1.1" 200 -
+2025-07-17 08:34:50,717 - INFO - 172.31.82.162 - - [17/Jul/2025 08:34:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:34:57,745 - INFO -  * Detected change in '/home/runner/workspace/app.py', reloading
+2025-07-17 08:34:57,884 - INFO -  * Restarting with stat
+2025-07-17 08:34:59,055 - WARNING -  * Debugger is active!
+2025-07-17 08:34:59,055 - INFO -  * Debugger PIN: 347-493-340
+2025-07-17 08:35:06,692 - INFO -  * Detected change in '/home/runner/workspace/app.py', reloading
+2025-07-17 08:35:06,903 - INFO -  * Restarting with stat
+2025-07-17 08:35:08,231 - WARNING -  * Debugger is active!
+2025-07-17 08:35:08,232 - INFO -  * Debugger PIN: 397-549-775
+2025-07-17 08:35:20,916 - INFO - Configuration loaded successfully
+2025-07-17 08:35:20,916 - ERROR - Error getting stats: name 'ArticleDeduplicator' is not defined
+2025-07-17 08:35:20,916 - INFO - 172.31.82.162 - - [17/Jul/2025 08:35:20] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-17 08:35:32,003 - INFO -  * Detected change in '/home/runner/workspace/app.py', reloading
+2025-07-17 08:35:32,203 - INFO -  * Restarting with stat
+2025-07-17 08:35:33,369 - WARNING -  * Debugger is active!
+2025-07-17 08:35:33,370 - INFO -  * Debugger PIN: 143-377-289
+2025-07-17 08:35:40,969 - INFO -  * Detected change in '/home/runner/workspace/app.py', reloading
+2025-07-17 08:35:41,127 - INFO -  * Restarting with stat
+2025-07-17 08:35:42,249 - WARNING -  * Debugger is active!
+2025-07-17 08:35:42,249 - INFO -  * Debugger PIN: 153-954-862
+2025-07-17 08:35:44,570 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:35:44,570 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:35:44,571 - INFO -  * Restarting with stat
+2025-07-17 08:35:45,730 - WARNING -  * Debugger is active!
+2025-07-17 08:35:45,731 - INFO -  * Debugger PIN: 827-944-866
+2025-07-17 08:35:45,805 - INFO - Configuration loaded successfully
+2025-07-17 08:35:47,445 - INFO - 172.31.82.162 - - [17/Jul/2025 08:35:47] "GET / HTTP/1.1" 200 -
+2025-07-17 08:35:47,500 - INFO - 172.31.82.162 - - [17/Jul/2025 08:35:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:35:57,273 - INFO - 172.31.82.162 - - [17/Jul/2025 08:35:57] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:36:10,541 - INFO -  * Detected change in '/home/runner/workspace/main.py', reloading
+2025-07-17 08:36:10,781 - INFO -  * Restarting with stat
+2025-07-17 08:36:11,937 - WARNING -  * Debugger is active!
+2025-07-17 08:36:11,938 - INFO -  * Debugger PIN: 540-941-630
+2025-07-17 08:36:15,287 - INFO -  * Detected change in '/home/runner/workspace/main.py', reloading
+2025-07-17 08:36:15,450 - INFO -  * Restarting with stat
+2025-07-17 08:36:16,576 - WARNING -  * Debugger is active!
+2025-07-17 08:36:16,577 - INFO -  * Debugger PIN: 494-376-182
+2025-07-17 08:36:17,742 - INFO - Configuration loaded successfully
+2025-07-17 08:36:20,970 - INFO - 172.31.82.162 - - [17/Jul/2025 08:36:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:36:21,025 - INFO -  * Detected change in '/home/runner/workspace/main.py', reloading
+2025-07-17 08:36:21,292 - INFO -  * Restarting with stat
+2025-07-17 08:36:22,520 - WARNING -  * Debugger is active!
+2025-07-17 08:36:22,521 - INFO -  * Debugger PIN: 113-683-116
+2025-07-17 08:36:44,084 - INFO -  * Detected change in '/home/runner/workspace/main.py', reloading
+2025-07-17 08:36:44,248 - INFO -  * Restarting with stat
+2025-07-17 08:36:45,404 - WARNING -  * Debugger is active!
+2025-07-17 08:36:45,405 - INFO -  * Debugger PIN: 917-574-230
+2025-07-17 08:36:47,738 - INFO - Configuration loaded successfully
+2025-07-17 08:36:49,005 - INFO - 172.31.82.162 - - [17/Jul/2025 08:36:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:37:02,784 - INFO - Starting newsletter generation process
+2025-07-17 08:37:02,786 - INFO - Configuration loaded successfully
+2025-07-17 08:37:02,879 - INFO - Fetching articles from RSS sources
+2025-07-17 08:37:02,879 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 08:37:03,139 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 08:37:03,141 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 08:37:03,317 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 08:37:03,318 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 08:37:03,318 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:37:04,260 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 08:37:04,261 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 08:37:04,261 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:37:04,357 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 08:37:04,359 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 08:37:04,359 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 08:37:04,586 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 08:37:04,587 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 08:37:04,786 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 08:37:04,787 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 08:37:04,787 - INFO - Fetching from RSS feed: https://www.meetingsnet.com/rss.xml
+2025-07-17 08:37:04,944 - INFO - Found 50 entries in MeetingsNet - The meeting, convention, and incentive travel industry’s top source for news, trends, and strategies.
+2025-07-17 08:37:04,945 - INFO - Total articles fetched: 15
+2025-07-17 08:37:04,945 - INFO - Fetched 15 raw articles
+2025-07-17 08:37:04,946 - INFO - Deduplicating articles
+2025-07-17 08:37:05,639 - INFO - Filtered out 10 duplicate articles
+2025-07-17 08:37:05,640 - INFO - Found 5 new articles
+2025-07-17 08:37:05,640 - INFO - Found 5 new articles after deduplication
+2025-07-17 08:37:05,640 - INFO - Summarizing articles with GPT-4o
+2025-07-17 08:37:05,641 - INFO - Summarizing article 1/5: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 08:37:07,558 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:37:07,566 - INFO - Successfully summarized: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 08:37:07,566 - INFO - Summarizing article 2/5: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 08:37:09,169 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:37:09,171 - INFO - Successfully summarized: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 08:37:09,171 - INFO - Summarizing article 3/5: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 08:37:10,743 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:37:10,746 - INFO - Successfully summarized: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 08:37:10,746 - INFO - Summarizing article 4/5: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 08:37:12,863 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:37:12,867 - INFO - Successfully summarized: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 08:37:12,867 - INFO - Summarizing article 5/5: Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+2025-07-17 08:37:15,053 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:37:15,060 - INFO - Successfully summarized: Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+2025-07-17 08:37:15,060 - INFO - Successfully summarized 5 articles
+2025-07-17 08:37:15,060 - INFO - Generating newsletter subject line
+2025-07-17 08:37:16,432 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-17 08:37:16,434 - INFO - Generated subject line: Next-Gen Event Tech Trends • $800M Cincinnati Upgrade • Backup Plans Essential
+2025-07-17 08:37:16,803 - INFO - Building newsletter
+2025-07-17 08:37:16,817 - INFO - HTML newsletter created: output/newsletter.html
+2025-07-17 08:37:16,818 - INFO - Markdown newsletter created: output/newsletter.md
+2025-07-17 08:37:16,819 - INFO - Plain text newsletter created: output/newsletter.txt
+2025-07-17 08:37:16,820 - INFO - Newsletter built successfully in all formats
+2025-07-17 08:37:17,674 - INFO - Saved article: 7 Ways Next-Gen Attendees are Reshaping Event Tech
+2025-07-17 08:37:17,747 - INFO - Configuration loaded successfully
+2025-07-17 08:37:17,799 - INFO - Saved article: Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+2025-07-17 08:37:17,925 - INFO - Saved article: Chicago Bets on Hotel Tax to Stay Competitive
+2025-07-17 08:37:18,049 - INFO - Saved article: Time for Plan B: Five Situations Where You’ll Need a Backup Plan
+2025-07-17 08:37:18,177 - INFO - Saved article: Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+2025-07-17 08:37:18,297 - INFO - Saved newsletter: Planner Pulse - 2025-07-17
+2025-07-17 08:37:18,298 - INFO - Saved newsletter to database with ID: 1
+2025-07-17 08:37:18,478 - INFO - Rotated sponsor: Visit St. Pete Clearwater -> Meet Boston
+2025-07-17 08:37:18,479 - INFO - Rotated sponsor: Visit St. Pete Clearwater -> Meet Boston
+2025-07-17 08:37:18,479 - INFO - Newsletter generation completed successfully
+2025-07-17 08:37:18,479 - INFO - Subject Line: Next-Gen Event Tech Trends • $800M Cincinnati Upgrade • Backup Plans Essential
+2025-07-17 08:37:18,479 - INFO - Articles included: 5
+2025-07-17 08:37:18,480 - INFO - Current sponsor: Visit St. Pete Clearwater
+2025-07-17 08:37:18,930 - INFO - 172.31.82.162 - - [17/Jul/2025 08:37:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:37:20,712 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:37:20,712 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:37:20,713 - INFO -  * Restarting with stat
+2025-07-17 08:37:22,339 - WARNING -  * Debugger is active!
+2025-07-17 08:37:22,342 - INFO -  * Debugger PIN: 686-539-889
+2025-07-17 08:37:22,423 - INFO - Configuration loaded successfully
+2025-07-17 08:37:23,607 - INFO - 172.31.82.162 - - [17/Jul/2025 08:37:23] "GET / HTTP/1.1" 200 -
+2025-07-17 08:37:23,655 - INFO - 172.31.82.162 - - [17/Jul/2025 08:37:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:37:46,927 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:37:46,928 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:37:46,928 - INFO -  * Restarting with stat
+2025-07-17 08:37:48,077 - WARNING -  * Debugger is active!
+2025-07-17 08:37:48,078 - INFO -  * Debugger PIN: 743-490-640
+2025-07-17 08:37:48,149 - INFO - Configuration loaded successfully
+2025-07-17 08:37:48,150 - INFO - Configuration loaded successfully
+2025-07-17 08:37:49,372 - INFO - 127.0.0.1 - - [17/Jul/2025 08:37:49] "GET / HTTP/1.1" 200 -
+2025-07-17 08:37:49,378 - INFO - 172.31.82.162 - - [17/Jul/2025 08:37:49] "GET / HTTP/1.1" 200 -
+2025-07-17 08:37:49,389 - INFO - 127.0.0.1 - - [17/Jul/2025 08:37:49] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:37:49,429 - INFO - 172.31.82.162 - - [17/Jul/2025 08:37:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:38:19,687 - INFO - Configuration loaded successfully
+2025-07-17 08:38:20,909 - INFO - 172.31.82.162 - - [17/Jul/2025 08:38:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:38:46,754 - INFO - 172.31.82.162 - - [17/Jul/2025 08:38:46] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:38:49,663 - INFO - Configuration loaded successfully
+2025-07-17 08:38:50,800 - INFO - 172.31.82.162 - - [17/Jul/2025 08:38:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:39:03,820 - INFO - 172.31.82.162 - - [17/Jul/2025 08:39:03] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:39:19,671 - INFO - Configuration loaded successfully
+2025-07-17 08:39:20,963 - INFO - 172.31.82.162 - - [17/Jul/2025 08:39:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:39:49,676 - INFO - Configuration loaded successfully
+2025-07-17 08:39:50,912 - INFO - 172.31.82.162 - - [17/Jul/2025 08:39:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:40:19,688 - INFO - Configuration loaded successfully
+2025-07-17 08:40:20,963 - INFO - 172.31.82.162 - - [17/Jul/2025 08:40:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:40:49,670 - INFO - Configuration loaded successfully
+2025-07-17 08:40:50,883 - INFO - 172.31.82.162 - - [17/Jul/2025 08:40:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:41:19,803 - INFO - Configuration loaded successfully
+2025-07-17 08:41:21,038 - INFO - 172.31.82.162 - - [17/Jul/2025 08:41:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:41:49,682 - INFO - Configuration loaded successfully
+2025-07-17 08:41:51,429 - INFO - 172.31.82.162 - - [17/Jul/2025 08:41:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:42:19,680 - INFO - Configuration loaded successfully
+2025-07-17 08:42:20,846 - INFO - 172.31.82.162 - - [17/Jul/2025 08:42:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:42:49,683 - INFO - Configuration loaded successfully
+2025-07-17 08:42:50,941 - INFO - 172.31.82.162 - - [17/Jul/2025 08:42:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:43:19,679 - INFO - Configuration loaded successfully
+2025-07-17 08:43:20,829 - INFO - 172.31.82.162 - - [17/Jul/2025 08:43:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:43:49,700 - INFO - Configuration loaded successfully
+2025-07-17 08:43:50,937 - INFO - 172.31.82.162 - - [17/Jul/2025 08:43:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:44:19,678 - INFO - Configuration loaded successfully
+2025-07-17 08:44:20,827 - INFO - 172.31.82.162 - - [17/Jul/2025 08:44:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:44:49,685 - INFO - Configuration loaded successfully
+2025-07-17 08:44:50,881 - INFO - 172.31.82.162 - - [17/Jul/2025 08:44:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:45:19,693 - INFO - Configuration loaded successfully
+2025-07-17 08:45:20,921 - INFO - 172.31.82.162 - - [17/Jul/2025 08:45:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:45:33,788 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:45:33,789 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:45:33,789 - INFO -  * Restarting with stat
+2025-07-17 08:45:34,944 - WARNING -  * Debugger is active!
+2025-07-17 08:45:34,945 - INFO -  * Debugger PIN: 907-548-616
+2025-07-17 08:45:35,016 - INFO - Configuration loaded successfully
+2025-07-17 08:45:36,219 - INFO - 172.31.82.162 - - [17/Jul/2025 08:45:36] "GET / HTTP/1.1" 200 -
+2025-07-17 08:45:36,298 - INFO - 172.31.82.162 - - [17/Jul/2025 08:45:36] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:46:06,575 - INFO - Configuration loaded successfully
+2025-07-17 08:46:07,818 - INFO - 172.31.82.162 - - [17/Jul/2025 08:46:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:46:36,577 - INFO - Configuration loaded successfully
+2025-07-17 08:46:37,767 - INFO - 172.31.82.162 - - [17/Jul/2025 08:46:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:47:06,576 - INFO - Configuration loaded successfully
+2025-07-17 08:47:07,750 - INFO - 172.31.82.162 - - [17/Jul/2025 08:47:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:47:36,588 - INFO - Configuration loaded successfully
+2025-07-17 08:47:37,823 - INFO - 172.31.82.162 - - [17/Jul/2025 08:47:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:47:41,663 - INFO -  * Detected change in '/home/runner/workspace/app.py', reloading
+2025-07-17 08:47:42,158 - INFO -  * Restarting with stat
+2025-07-17 08:47:43,550 - WARNING -  * Debugger is active!
+2025-07-17 08:47:43,551 - INFO -  * Debugger PIN: 118-642-862
+2025-07-17 08:48:06,589 - INFO - Configuration loaded successfully
+2025-07-17 08:48:07,818 - INFO - 172.31.82.162 - - [17/Jul/2025 08:48:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:48:36,586 - INFO - Configuration loaded successfully
+2025-07-17 08:48:37,769 - INFO - 172.31.82.162 - - [17/Jul/2025 08:48:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:48:45,004 - INFO -  * Detected change in '/home/runner/workspace/database.py', reloading
+2025-07-17 08:48:45,322 - INFO -  * Restarting with stat
+2025-07-17 08:48:46,490 - WARNING -  * Debugger is active!
+2025-07-17 08:48:46,491 - INFO -  * Debugger PIN: 827-565-139
+2025-07-17 08:49:01,646 - INFO -  * Detected change in '/home/runner/workspace/database.py', reloading
+2025-07-17 08:49:01,859 - INFO -  * Restarting with stat
+2025-07-17 08:49:03,104 - WARNING -  * Debugger is active!
+2025-07-17 08:49:03,105 - INFO -  * Debugger PIN: 683-045-543
+2025-07-17 08:49:06,608 - INFO - Configuration loaded successfully
+2025-07-17 08:49:07,839 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:49:18,624 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:49:18,624 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:49:18,625 - INFO -  * Restarting with stat
+2025-07-17 08:49:19,794 - WARNING -  * Debugger is active!
+2025-07-17 08:49:19,795 - INFO -  * Debugger PIN: 131-896-163
+2025-07-17 08:49:19,873 - INFO - Configuration loaded successfully
+2025-07-17 08:49:19,874 - INFO - Configuration loaded successfully
+2025-07-17 08:49:21,086 - INFO - 127.0.0.1 - - [17/Jul/2025 08:49:21] "GET / HTTP/1.1" 200 -
+2025-07-17 08:49:21,093 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:21] "GET / HTTP/1.1" 200 -
+2025-07-17 08:49:21,111 - INFO - 127.0.0.1 - - [17/Jul/2025 08:49:21] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:49:21,162 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:49:41,773 - INFO - Configuration loaded successfully
+2025-07-17 08:49:42,186 - INFO - Deactivated sponsor: Visit St. Pete Clearwater
+2025-07-17 08:49:42,187 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:42] "POST /api/settings/sponsor/toggle HTTP/1.1" 200 -
+2025-07-17 08:49:42,227 - INFO - Configuration loaded successfully
+2025-07-17 08:49:42,789 - INFO - Configuration loaded successfully
+2025-07-17 08:49:43,198 - INFO - Activated sponsor: Visit St. Pete Clearwater
+2025-07-17 08:49:43,199 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:43] "POST /api/settings/sponsor/toggle HTTP/1.1" 200 -
+2025-07-17 08:49:43,246 - INFO - Configuration loaded successfully
+2025-07-17 08:49:43,415 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:43] "GET / HTTP/1.1" 200 -
+2025-07-17 08:49:43,592 - INFO - Configuration loaded successfully
+2025-07-17 08:49:43,988 - INFO - Deactivated sponsor: Meet Boston
+2025-07-17 08:49:43,989 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:43] "POST /api/settings/sponsor/toggle HTTP/1.1" 200 -
+2025-07-17 08:49:44,030 - INFO - Configuration loaded successfully
+2025-07-17 08:49:44,455 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:44] "GET / HTTP/1.1" 200 -
+2025-07-17 08:49:45,176 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:45] "GET / HTTP/1.1" 200 -
+2025-07-17 08:49:45,267 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:49:52,111 - INFO - 172.31.82.162 - - [17/Jul/2025 08:49:52] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:50:12,840 - INFO - Configuration loaded successfully
+2025-07-17 08:50:12,841 - INFO - 172.31.82.162 - - [17/Jul/2025 08:50:12] "POST /api/settings/email HTTP/1.1" 200 -
+2025-07-17 08:50:15,480 - INFO - Configuration loaded successfully
+2025-07-17 08:50:16,633 - INFO - 172.31.82.162 - - [17/Jul/2025 08:50:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:50:45,486 - INFO - Configuration loaded successfully
+2025-07-17 08:50:46,665 - INFO - 172.31.82.162 - - [17/Jul/2025 08:50:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:51:15,491 - INFO - Configuration loaded successfully
+2025-07-17 08:51:16,739 - INFO - 172.31.82.162 - - [17/Jul/2025 08:51:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:51:45,484 - INFO - Configuration loaded successfully
+2025-07-17 08:51:46,676 - INFO - 172.31.82.162 - - [17/Jul/2025 08:51:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:52:15,486 - INFO - Configuration loaded successfully
+2025-07-17 08:52:17,272 - INFO - 172.31.82.162 - - [17/Jul/2025 08:52:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:52:45,491 - INFO - Configuration loaded successfully
+2025-07-17 08:52:46,665 - INFO - 172.31.82.162 - - [17/Jul/2025 08:52:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:53:15,497 - INFO - Configuration loaded successfully
+2025-07-17 08:53:16,769 - INFO - 172.31.82.162 - - [17/Jul/2025 08:53:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:53:45,496 - INFO - Configuration loaded successfully
+2025-07-17 08:53:46,760 - INFO - 172.31.82.162 - - [17/Jul/2025 08:53:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:53:54,822 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:53:54,823 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:53:54,824 - INFO -  * Restarting with stat
+2025-07-17 08:53:55,989 - WARNING -  * Debugger is active!
+2025-07-17 08:53:55,990 - INFO -  * Debugger PIN: 402-680-892
+2025-07-17 08:53:56,066 - INFO - Configuration loaded successfully
+2025-07-17 08:53:57,338 - INFO - 172.31.82.162 - - [17/Jul/2025 08:53:57] "GET / HTTP/1.1" 200 -
+2025-07-17 08:53:57,463 - INFO - 172.31.82.162 - - [17/Jul/2025 08:53:57] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:54:27,716 - INFO - Configuration loaded successfully
+2025-07-17 08:54:28,918 - INFO - 172.31.82.162 - - [17/Jul/2025 08:54:28] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:54:57,716 - INFO - Configuration loaded successfully
+2025-07-17 08:54:58,905 - INFO - 172.31.82.162 - - [17/Jul/2025 08:54:58] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:55:27,716 - INFO - Configuration loaded successfully
+2025-07-17 08:55:28,878 - INFO - 172.31.82.162 - - [17/Jul/2025 08:55:28] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:55:57,720 - INFO - Configuration loaded successfully
+2025-07-17 08:55:58,998 - INFO - 172.31.82.162 - - [17/Jul/2025 08:55:58] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:56:27,734 - INFO - Configuration loaded successfully
+2025-07-17 08:56:28,884 - INFO - 172.31.82.162 - - [17/Jul/2025 08:56:28] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:56:57,719 - INFO - Configuration loaded successfully
+2025-07-17 08:56:58,993 - INFO - 172.31.82.162 - - [17/Jul/2025 08:56:58] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:57:02,002 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:57:02,003 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:57:02,003 - INFO -  * Restarting with stat
+2025-07-17 08:57:03,329 - WARNING -  * Debugger is active!
+2025-07-17 08:57:03,330 - INFO -  * Debugger PIN: 832-409-935
+2025-07-17 08:57:03,413 - INFO - Configuration loaded successfully
+2025-07-17 08:57:04,633 - INFO - 172.31.82.162 - - [17/Jul/2025 08:57:04] "GET / HTTP/1.1" 200 -
+2025-07-17 08:57:04,727 - INFO - 172.31.82.162 - - [17/Jul/2025 08:57:04] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:57:35,008 - INFO - Configuration loaded successfully
+2025-07-17 08:57:36,216 - INFO - 172.31.82.162 - - [17/Jul/2025 08:57:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:58:05,007 - INFO - Configuration loaded successfully
+2025-07-17 08:58:06,149 - INFO - 172.31.82.162 - - [17/Jul/2025 08:58:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:58:23,388 - INFO - 172.31.82.162 - - [17/Jul/2025 08:58:23] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:58:31,910 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 08:58:31,910 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 08:58:31,911 - INFO -  * Restarting with stat
+2025-07-17 08:58:33,245 - WARNING -  * Debugger is active!
+2025-07-17 08:58:33,247 - INFO -  * Debugger PIN: 147-414-346
+2025-07-17 08:58:33,337 - INFO - Configuration loaded successfully
+2025-07-17 08:58:33,360 - INFO - Configuration loaded successfully
+2025-07-17 08:58:33,641 - INFO - 172.31.82.162 - - [17/Jul/2025 08:58:33] "GET /preview HTTP/1.1" 200 -
+2025-07-17 08:58:34,580 - INFO - 172.31.82.162 - - [17/Jul/2025 08:58:34] "GET / HTTP/1.1" 200 -
+2025-07-17 08:58:34,598 - INFO - 127.0.0.1 - - [17/Jul/2025 08:58:34] "GET / HTTP/1.1" 200 -
+2025-07-17 08:58:34,613 - INFO - 127.0.0.1 - - [17/Jul/2025 08:58:34] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 08:58:34,651 - INFO - 172.31.82.162 - - [17/Jul/2025 08:58:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 08:59:04,865 - INFO - Configuration loaded successfully
+2025-07-17 08:59:06,074 - INFO - 172.31.82.162 - - [17/Jul/2025 08:59:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 08:59:34,882 - INFO - Configuration loaded successfully
+2025-07-17 08:59:36,108 - INFO - 172.31.82.162 - - [17/Jul/2025 08:59:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:00:04,873 - INFO - Configuration loaded successfully
+2025-07-17 09:00:06,126 - INFO - 172.31.82.162 - - [17/Jul/2025 09:00:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:00:34,871 - INFO - Configuration loaded successfully
+2025-07-17 09:00:36,010 - INFO - 172.31.82.162 - - [17/Jul/2025 09:00:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:01:04,871 - INFO - Configuration loaded successfully
+2025-07-17 09:01:06,146 - INFO - 172.31.82.162 - - [17/Jul/2025 09:01:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:01:34,867 - INFO - Configuration loaded successfully
+2025-07-17 09:01:36,061 - INFO - 172.31.82.162 - - [17/Jul/2025 09:01:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:02:04,866 - INFO - Configuration loaded successfully
+2025-07-17 09:02:06,096 - INFO - 172.31.82.162 - - [17/Jul/2025 09:02:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:02:34,876 - INFO - Configuration loaded successfully
+2025-07-17 09:02:36,839 - INFO - 172.31.82.162 - - [17/Jul/2025 09:02:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:03:04,878 - INFO - Configuration loaded successfully
+2025-07-17 09:03:06,044 - INFO - 172.31.82.162 - - [17/Jul/2025 09:03:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:03:34,881 - INFO - Configuration loaded successfully
+2025-07-17 09:03:36,185 - INFO - 172.31.82.162 - - [17/Jul/2025 09:03:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:04:04,881 - INFO - Configuration loaded successfully
+2025-07-17 09:04:06,079 - INFO - 172.31.82.162 - - [17/Jul/2025 09:04:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:04:34,885 - INFO - Configuration loaded successfully
+2025-07-17 09:04:36,123 - INFO - 172.31.82.162 - - [17/Jul/2025 09:04:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:05:04,874 - INFO - Configuration loaded successfully
+2025-07-17 09:05:06,097 - INFO - 172.31.82.162 - - [17/Jul/2025 09:05:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:05:21,316 - INFO -  * Detected change in '/home/runner/workspace/summarizer.py', reloading
+2025-07-17 09:05:21,737 - INFO -  * Restarting with stat
+2025-07-17 09:05:22,874 - WARNING -  * Debugger is active!
+2025-07-17 09:05:22,875 - INFO -  * Debugger PIN: 768-542-547
+2025-07-17 09:05:34,876 - INFO - Configuration loaded successfully
+2025-07-17 09:05:36,123 - INFO - 172.31.82.162 - - [17/Jul/2025 09:05:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:06:04,882 - INFO - Configuration loaded successfully
+2025-07-17 09:06:06,125 - INFO - 172.31.82.162 - - [17/Jul/2025 09:06:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:06:34,881 - INFO - Configuration loaded successfully
+2025-07-17 09:06:36,061 - INFO - 172.31.82.162 - - [17/Jul/2025 09:06:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:06:37,406 - INFO -  * Detected change in '/home/runner/workspace/main.py', reloading
+2025-07-17 09:06:37,870 - INFO -  * Restarting with stat
+2025-07-17 09:06:39,338 - WARNING -  * Debugger is active!
+2025-07-17 09:06:39,339 - INFO -  * Debugger PIN: 520-040-637
+2025-07-17 09:06:46,089 - INFO - Starting newsletter generation process
+2025-07-17 09:06:46,090 - INFO - Configuration loaded successfully
+2025-07-17 09:06:46,168 - INFO - Fetching articles from RSS sources
+2025-07-17 09:06:46,169 - INFO - Fetching from RSS feed: https://www.meetingstoday.com/rss.xml
+2025-07-17 09:06:46,497 - INFO - Found 10 entries in Meetings Today  - Meetings, Convention & Conference Industry News and Destination Planning Information
+2025-07-17 09:06:46,498 - INFO - Fetching from RSS feed: https://www.bizbash.com/rss.xml
+2025-07-17 09:06:46,773 - WARNING - RSS feed may have issues: https://www.bizbash.com/rss.xml
+2025-07-17 09:06:46,774 - INFO - Found 0 entries in www.bizbash.com
+2025-07-17 09:06:46,775 - INFO - Fetching from RSS feed: https://www.tsnn.com/news/rss.xml
+2025-07-17 09:06:47,914 - WARNING - RSS feed may have issues: https://www.tsnn.com/news/rss.xml
+2025-07-17 09:06:47,914 - INFO - Found 0 entries in www.tsnn.com
+2025-07-17 09:06:47,915 - INFO - Fetching from RSS feed: https://www.meetings-conventions.com/rss.xml
+2025-07-17 09:06:48,070 - WARNING - RSS feed may have issues: https://www.meetings-conventions.com/rss.xml
+2025-07-17 09:06:48,070 - INFO - Found 0 entries in www.meetings-conventions.com
+2025-07-17 09:06:48,070 - INFO - Fetching from RSS feed: https://www.eventmanagerblog.com/feed
+2025-07-17 09:06:48,470 - INFO - Found 10 entries in Skift Meetings
+2025-07-17 09:06:48,473 - INFO - Fetching from RSS feed: https://www.cvent.com/en/blog/feed
+2025-07-17 09:06:48,681 - WARNING - RSS feed may have issues: https://www.cvent.com/en/blog/feed
+2025-07-17 09:06:48,683 - INFO - Found 0 entries in www.cvent.com
+2025-07-17 09:06:48,683 - INFO - Total articles fetched: 10
+2025-07-17 09:06:48,683 - INFO - Fetched 10 raw articles
+2025-07-17 09:06:48,684 - INFO - Deduplicating articles
+2025-07-17 09:06:49,297 - INFO - Filtered out 10 duplicate articles
+2025-07-17 09:06:49,303 - INFO - Found 0 new articles
+2025-07-17 09:06:49,308 - INFO - Found 0 new articles after deduplication
+2025-07-17 09:06:49,312 - WARNING - No new articles found. Newsletter generation skipped.
+2025-07-17 09:07:04,882 - INFO - Configuration loaded successfully
+2025-07-17 09:07:06,169 - INFO - 172.31.82.162 - - [17/Jul/2025 09:07:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:07:17,261 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.82.162:5000
+2025-07-17 09:07:17,261 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 09:07:17,262 - INFO -  * Restarting with stat
+2025-07-17 09:07:19,136 - WARNING -  * Debugger is active!
+2025-07-17 09:07:19,137 - INFO -  * Debugger PIN: 139-956-368
+2025-07-17 09:07:19,222 - INFO - Configuration loaded successfully
+2025-07-17 09:07:19,242 - INFO - Configuration loaded successfully
+2025-07-17 09:07:20,516 - INFO - 172.31.82.162 - - [17/Jul/2025 09:07:20] "GET / HTTP/1.1" 200 -
+2025-07-17 09:07:20,526 - INFO - 127.0.0.1 - - [17/Jul/2025 09:07:20] "GET / HTTP/1.1" 200 -
+2025-07-17 09:07:20,546 - INFO - 127.0.0.1 - - [17/Jul/2025 09:07:20] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-17 09:07:20,591 - INFO - 172.31.82.162 - - [17/Jul/2025 09:07:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-17 09:07:50,865 - INFO - Configuration loaded successfully
+2025-07-17 09:07:52,111 - INFO - 172.31.82.162 - - [17/Jul/2025 09:07:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-17 09:08:20,873 - INFO - Configuration loaded successfully
