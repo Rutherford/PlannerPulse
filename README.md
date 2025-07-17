@@ -65,8 +65,8 @@ PlannerPulse is an intelligent newsletter automation system that scrapes meeting
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/PlannerPulse.git
-   cd PlannerPulse/PlannerPulse
+   git clone https://github.com/Rutherford/PlannerPulse.git
+   cd PlannerPulse
    ```
 
 2. **Install dependencies**
@@ -81,9 +81,9 @@ PlannerPulse is an intelligent newsletter automation system that scrapes meeting
 
    ```bash
    # Create .env file
-   OPENAI_API_KEY=your_openai_api_key_here
+   OPENAI_API_KEY=<your_openai_api_key>
    DATABASE_URL=postgresql://username:password@localhost/planner_pulse
-   SECRET_KEY=your_secret_key_for_flask_sessions
+   SECRET_KEY=<your_flask_secret_key>
    ```
 
 4. **Initialize the database**
@@ -297,8 +297,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🆘 Support
 
 - 📧 Email: <support@plannerpulse.com>
-- 💬 GitHub Issues: [Report a bug](https://github.com/yourusername/PlannerPulse/issues)
-- 📖 Documentation: [Wiki](https://github.com/yourusername/PlannerPulse/wiki)
+- 💬 GitHub Issues: [Report a bug](https://github.com/Rutherford/PlannerPulse/issues)
+- 📖 Documentation: [Wiki](https://github.com/Rutherford/PlannerPulse/wiki)
 
 ## 🙏 Acknowledgments
 
