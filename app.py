@@ -12,13 +12,6 @@ from datetime import datetime
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 
-# Load environment variables from .env file if present
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass  # python-dotenv not required for production
-
 from main import run_newsletter_generation, load_config
 from database import (
     DatabaseArticleManager, DatabaseSponsorManager, 
@@ -480,6 +473,4 @@ if __name__ == '__main__':
     os.makedirs('output', exist_ok=True)
     os.makedirs('data', exist_ok=True)
     
-    # Use environment variable for port configuration
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=9000, debug=True)

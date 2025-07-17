@@ -104,7 +104,7 @@ PlannerPulse is an intelligent newsletter automation system that scrapes meeting
 
 6. **Access the dashboard**
 
-   Open <http://localhost:5000> in your browser (or the port specified in your PORT environment variable)
+   Open <http://localhost:5000> in your browser
 
 ## 🏗️ Project Structure
 
