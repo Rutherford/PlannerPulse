@@ -39,6 +39,14 @@ class DatabaseArticleManager:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close_session()
     
+    def __del__(self):
+        """Ensure session is closed when object is destroyed"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except:
+                pass
+    
     def is_duplicate(self, article: Dict) -> bool:
         """Check if article already exists in database"""
         try:
@@ -154,6 +162,14 @@ class DatabaseSponsorManager:
     
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close_session()
+    
+    def __del__(self):
+        """Ensure session is closed when object is destroyed"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except:
+                pass
     
     def get_current_sponsor(self) -> Optional[Dict]:
         """Get the current sponsor based on rotation logic"""
@@ -348,6 +364,14 @@ class DatabaseNewsletterManager:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close_session()
     
+    def __del__(self):
+        """Ensure session is closed when object is destroyed"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except:
+                pass
+    
     def save_newsletter(self, newsletter_data: Dict, articles: List[Dict]) -> Optional[Newsletter]:
         """Save newsletter and associated articles to database"""
         try:
@@ -446,6 +470,14 @@ class DatabaseRSSManager:
     
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close_session()
+    
+    def __del__(self):
+        """Ensure session is closed when object is destroyed"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except:
+                pass
     
     def get_active_sources(self) -> List[RSSSource]:
         """Get active RSS sources"""
