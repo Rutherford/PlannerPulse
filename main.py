@@ -47,113 +47,113 @@ def run_newsletter_generation():
         # Load configuration
         config = load_config()
         
-        # Initialize database components
-        article_manager = DatabaseArticleManager()
-        sponsor_manager = DatabaseSponsorManager()
-        newsletter_manager = DatabaseNewsletterManager()
+        # Initialize database components using context managers
+        with DatabaseArticleManager() as article_manager, \
+             DatabaseSponsorManager() as sponsor_manager, \
+             DatabaseNewsletterManager() as newsletter_manager:
+            
+            # Fetch articles from RSS sources
+            logger.info("Fetching articles from RSS sources")
+            raw_articles = fetch_articles(config["sources"])
+            logger.info(f"Fetched {len(raw_articles)} raw articles")
+            
+            # Deduplicate articles using database
+            logger.info("Deduplicating articles")
+            new_articles = article_manager.filter_new_articles(raw_articles)
+            logger.info(f"Found {len(new_articles)} new articles after deduplication")
+            
+            if not new_articles:
+                logger.warning("No new articles found. Newsletter generation skipped.")
+                return False
+            
+            # Summarize articles using GPT-4o
+            logger.info("Summarizing articles with GPT-4o")
+            summaries = []
+            successful_summaries = 0
+            
+            for i, article in enumerate(new_articles):
+                try:
+                    logger.info(f"Summarizing article {i+1}/{len(new_articles)}: {article['title']}")
+                    summary_data = summarize_article(article)
+                    if summary_data:
+                        # Handle both old string format and new dict format
+                        if isinstance(summary_data, dict):
+                            summaries.append({
+                                **article,
+                                'summary': summary_data.get('summary', ''),
+                                'takeaway': summary_data.get('takeaway', '')
+                            })
+                        else:
+                            # Legacy string format
+                            summaries.append({
+                                **article,
+                                'summary': summary_data
+                            })
+                        successful_summaries += 1
+                except Exception as e:
+                    logger.error(f"Failed to summarize article '{article['title']}': {e}")
+                    continue
+            
+            logger.info(f"Successfully summarized {successful_summaries} articles")
+            
+            if not summaries:
+                logger.error("No articles were successfully summarized")
+                return False
         
-        # Fetch articles from RSS sources
-        logger.info("Fetching articles from RSS sources")
-        raw_articles = fetch_articles(config["sources"])
-        logger.info(f"Fetched {len(raw_articles)} raw articles")
-        
-        # Deduplicate articles using database
-        logger.info("Deduplicating articles")
-        new_articles = article_manager.filter_new_articles(raw_articles)
-        logger.info(f"Found {len(new_articles)} new articles after deduplication")
-        
-        if not new_articles:
-            logger.warning("No new articles found. Newsletter generation skipped.")
-            return False
-        
-        # Summarize articles using GPT-4o
-        logger.info("Summarizing articles with GPT-4o")
-        summaries = []
-        successful_summaries = 0
-        
-        for i, article in enumerate(new_articles):
+            # Generate subject line
+            logger.info("Generating newsletter subject line")
             try:
-                logger.info(f"Summarizing article {i+1}/{len(new_articles)}: {article['title']}")
-                summary_data = summarize_article(article)
-                if summary_data:
-                    # Handle both old string format and new dict format
-                    if isinstance(summary_data, dict):
-                        summaries.append({
-                            **article,
-                            'summary': summary_data.get('summary', ''),
-                            'takeaway': summary_data.get('takeaway', '')
-                        })
-                    else:
-                        # Legacy string format
-                        summaries.append({
-                            **article,
-                            'summary': summary_data
-                        })
-                    successful_summaries += 1
+                subject_line = generate_subject_line(summaries, config["newsletter_title"])
             except Exception as e:
-                logger.error(f"Failed to summarize article '{article['title']}': {e}")
-                continue
-        
-        logger.info(f"Successfully summarized {successful_summaries} articles")
-        
-        if not summaries:
-            logger.error("No articles were successfully summarized")
-            return False
-        
-        # Generate subject line
-        logger.info("Generating newsletter subject line")
-        try:
-            subject_line = generate_subject_line(summaries, config["newsletter_title"])
-        except Exception as e:
-            logger.error(f"Failed to generate subject line: {e}")
-            subject_line = f"{config['newsletter_title']} - {datetime.now().strftime('%B %d, %Y')}"
-        
-        # Get current sponsor
-        current_sponsor = sponsor_manager.get_current_sponsor()
-        
-        # Build newsletter
-        logger.info("Building newsletter")
-        newsletter_data = {
-            'title': config["newsletter_title"],
-            'subject_line': subject_line,
-            'stories': summaries,
-            'sponsor': current_sponsor,
-            'generated_at': datetime.now().isoformat()
-        }
-        
-        success, html_content, markdown_content, text_content = build_newsletter(newsletter_data, config)
-
-        if success:
-            # Save newsletter and articles to database
-            newsletter_data_db = {
-                'title': f"Planner Pulse - {datetime.now().strftime('%Y-%m-%d')}",
+                logger.error(f"Failed to generate subject line: {e}")
+                subject_line = f"{config['newsletter_title']} - {datetime.now().strftime('%B %d, %Y')}"
+            
+            # Get current sponsor
+            current_sponsor = sponsor_manager.get_current_sponsor()
+            
+            # Build newsletter
+            logger.info("Building newsletter")
+            newsletter_data = {
+                'title': config["newsletter_title"],
                 'subject_line': subject_line,
-                'html_content': html_content,
-                'markdown_content': markdown_content,
-                'text_content': text_content,
-                'sponsor': current_sponsor
+                'stories': summaries,
+                'sponsor': current_sponsor,
+                'generated_at': datetime.now().isoformat()
             }
             
-            # Save articles to database (they're saved automatically during filter_new_articles)
-            saved_newsletter = newsletter_manager.save_newsletter(newsletter_data_db, summaries)
-            if saved_newsletter:
-                logger.info(f"Saved newsletter to database with ID: {saved_newsletter.id}")
-            
-            # Rotate to next sponsor
-            old_sponsor = current_sponsor.get('name', 'None') if current_sponsor else 'None'
-            next_sponsor = sponsor_manager.rotate_sponsor(saved_newsletter.id if saved_newsletter else None)
-            new_sponsor_name = next_sponsor.get('name', 'None') if next_sponsor else 'None'
-            logger.info(f"Rotated sponsor: {old_sponsor} -> {new_sponsor_name}")
-            
-            logger.info("Newsletter generation completed successfully")
-            logger.info(f"Subject Line: {subject_line}")
-            logger.info(f"Articles included: {len(summaries)}")
-            logger.info(f"Current sponsor: {current_sponsor.get('name', 'None')}")
-            
-            return True
-        else:
-            logger.error("Newsletter building failed")
-            return False
+            success, html_content, markdown_content, text_content = build_newsletter(newsletter_data, config)
+
+            if success:
+                # Save newsletter and articles to database
+                newsletter_data_db = {
+                    'title': f"Planner Pulse - {datetime.now().strftime('%Y-%m-%d')}",
+                    'subject_line': subject_line,
+                    'html_content': html_content,
+                    'markdown_content': markdown_content,
+                    'text_content': text_content,
+                    'sponsor': current_sponsor
+                }
+                
+                # Save articles to database (they're saved automatically during filter_new_articles)
+                saved_newsletter = newsletter_manager.save_newsletter(newsletter_data_db, summaries)
+                if saved_newsletter:
+                    logger.info(f"Saved newsletter to database with ID: {saved_newsletter.id}")
+                
+                # Rotate to next sponsor
+                old_sponsor = current_sponsor.get('name', 'None') if current_sponsor else 'None'
+                next_sponsor = sponsor_manager.rotate_sponsor(saved_newsletter.id if saved_newsletter else None)
+                new_sponsor_name = next_sponsor.get('name', 'None') if next_sponsor else 'None'
+                logger.info(f"Rotated sponsor: {old_sponsor} -> {new_sponsor_name}")
+                
+                logger.info("Newsletter generation completed successfully")
+                logger.info(f"Subject Line: {subject_line}")
+                logger.info(f"Articles included: {len(summaries)}")
+                logger.info(f"Current sponsor: {current_sponsor.get('name', 'None')}")
+                
+                return True
+            else:
+                logger.error("Newsletter building failed")
+                return False
             
     except Exception as e:
         logger.error(f"Newsletter generation failed: {e}")

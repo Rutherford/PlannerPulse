@@ -7,6 +7,7 @@ Provides preview and management capabilities with database integration
 import json
 import logging
 import os
+import secrets
 from datetime import datetime
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -23,7 +24,24 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+# Secure secret key handling
+secret_key = os.environ.get('SECRET_KEY')
+if not secret_key:
+    import secrets
+    secret_key = secrets.token_hex(32)
+    logger.warning("No SECRET_KEY environment variable found. Generated a random key for this session. "
+                   "For production, set the SECRET_KEY environment variable to a secure random value.")
+=======
+
+# Generate a secure secret key
+secret_key = os.environ.get('SECRET_KEY')
+if not secret_key:
+    # Generate a random secret key for development
+    # In production, always set SECRET_KEY environment variable
+    secret_key = secrets.token_hex(32)
+    logger.warning("No SECRET_KEY found in environment. Generated random key (not suitable for production)")
+
+app.secret_key = secret_key
 
 # Configure database
 app.config['SQLALCHEMY_DATABASE_URI'] = get_database_url()
@@ -42,25 +60,25 @@ def index():
     try:
         config = load_config()
         
-        # Initialize database managers
-        article_manager = DatabaseArticleManager()
-        sponsor_manager = DatabaseSponsorManager()
-        newsletter_manager = DatabaseNewsletterManager()
-        
-        # Get database statistics
-        article_stats = article_manager.get_stats()
-        sponsor_stats = sponsor_manager.get_sponsor_stats()
-        newsletter_stats = newsletter_manager.get_newsletter_stats()
-        
-        stats = {
-            'total_processed': article_stats.get('total_articles', 0),
-            'total_sponsors': sponsor_stats.get('total_sponsors', 0),
-            'current_sponsor': sponsor_manager.get_current_sponsor(),
-            'rss_sources': len(config.get("sources", [])),
-            'articles_today': article_stats.get('articles_today', 0),
-            'newsletters_today': newsletter_stats.get('newsletters_today', 0),
-            'total_newsletters': newsletter_stats.get('total_newsletters', 0)
-        }
+        # Initialize database managers using context managers
+        with DatabaseArticleManager() as article_manager, \
+             DatabaseSponsorManager() as sponsor_manager, \
+             DatabaseNewsletterManager() as newsletter_manager:
+            
+            # Get database statistics
+            article_stats = article_manager.get_stats()
+            sponsor_stats = sponsor_manager.get_sponsor_stats()
+            newsletter_stats = newsletter_manager.get_newsletter_stats()
+            
+            stats = {
+                'total_processed': article_stats.get('total_articles', 0),
+                'total_sponsors': sponsor_stats.get('total_sponsors', 0),
+                'current_sponsor': sponsor_manager.get_current_sponsor(),
+                'rss_sources': len(config.get("sources", [])),
+                'articles_today': article_stats.get('articles_today', 0),
+                'newsletters_today': newsletter_stats.get('newsletters_today', 0),
+                'total_newsletters': newsletter_stats.get('total_newsletters', 0)
+            }
         
         # Check if recent newsletter exists
         recent_newsletter = None
