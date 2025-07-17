@@ -381,9 +381,83 @@ def update_email_settings():
         logger.error(f"Error updating settings: {e}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/settings/api-key', methods=['POST'])
+def save_api_key():
+    """Save OpenAI API key to configuration"""
+    try:
+        data = request.get_json()
+        api_key = data.get('api_key', '').strip()
+        
+        if not api_key:
+            return jsonify({'error': 'API key is required'}), 400
+            
+        if not api_key.startswith('sk-'):
+            return jsonify({'error': 'Invalid API key format'}), 400
+            
+        # Load config
+        config = load_config()
+        
+        # Save API key to config
+        config['openai_api_key'] = api_key
+        
+        # Save config
+        with open('config.json', 'w') as f:
+            json.dump(config, f, indent=2)
+            
+        # Reinitialize the OpenAI client with new key
+        from summarizer import initialize_openai_client
+        if initialize_openai_client(api_key):
+            flash('OpenAI API key saved successfully', 'success')
+            return jsonify({'success': True})
+        else:
+            return jsonify({'error': 'Failed to initialize OpenAI client'}), 500
+            
+    except Exception as e:
+        logger.error(f"Error saving API key: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/settings/api-key-status')
+def api_key_status():
+    """Check if API key is configured"""
+    try:
+        config = load_config()
+        api_key = config.get('openai_api_key')
+        
+        return jsonify({
+            'configured': bool(api_key and api_key.strip()),
+            'masked_key': f"sk-...{api_key[-4:]}" if api_key else None
+        })
+        
+    except Exception as e:
+        logger.error(f"Error checking API key status: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/settings/test-api', methods=['POST'])
+def test_api_connection():
+    """Test OpenAI API connection"""
+    try:
+        data = request.get_json()
+        api_key = data.get('api_key', '').strip()
+        
+        if not api_key:
+            return jsonify({'error': 'API key is required'}), 400
+            
+        # Test the API connection
+        from summarizer import test_api_connection
+        success, result = test_api_connection(api_key)
+        
+        if success:
+            return jsonify({'success': True, 'model': result})
+        else:
+            return jsonify({'success': False, 'error': result}), 400
+            
+    except Exception as e:
+        logger.error(f"Error testing API connection: {e}")
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     # Ensure output directory exists
     os.makedirs('output', exist_ok=True)
     os.makedirs('data', exist_ok=True)
     
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=9000, debug=True)

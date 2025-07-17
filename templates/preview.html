@@ -14,7 +14,15 @@
             <!-- Sidebar -->
             <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
                 <div class="position-sticky pt-3">
-                    <h4 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1">
+                    <h4 class="sidebar-heading d-flex justify-content-between         }
+
+        // Initialize page - check API key status on load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkApiKeyStatus();
+        });
+    </script>
+</body>
+</html>n-items-center px-3 mt-4 mb-1">
                         <span style="color: var(--primary-color); font-weight: 700;">PlannerPulse</span>
                         <i data-feather="zap" class="text-primary"></i>
                     </h4>
@@ -223,6 +231,49 @@
                 <!-- Settings Section -->
                 <div id="settings-section" class="content-section" style="display: none;">
                     <h2 class="mb-4">Settings</h2>
+                    
+                    <!-- API Configuration -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">API Configuration</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info">
+                                <i data-feather="info"></i>
+                                <strong>OpenAI API Key Required:</strong> 
+                                Enter your OpenAI API key to enable AI-powered article summarization and subject line generation.
+                                <a href="https://platform.openai.com/api-keys" target="_blank" class="alert-link">Get your API key here</a>.
+                            </div>
+                            
+                            <form id="api-config-form">
+                                <div class="mb-3">
+                                    <label for="openai-api-key" class="form-label">OpenAI API Key</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="openai-api-key" 
+                                               placeholder="sk-..." 
+                                               value="{{ config.get('openai_api_key', '') }}"
+                                               autocomplete="off">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="toggleApiKeyVisibility()">
+                                            <i data-feather="eye" id="api-key-toggle-icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-text">
+                                        Your API key is stored securely and only used for AI summarization. 
+                                        <span id="api-key-status" class="badge bg-secondary">Not configured</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-primary" onclick="saveApiConfig()">
+                                        <i data-feather="save"></i> Save API Configuration
+                                    </button>
+                                    <button type="button" class="btn btn-secondary ms-2" onclick="testApiConnection()">
+                                        <i data-feather="zap"></i> Test Connection
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     
                     <!-- RSS Sources Management -->
                     <div class="card mb-4">
@@ -466,6 +517,139 @@
         }, 30000);
 
         // Settings Functions
+        
+        // API Configuration Functions
+        function toggleApiKeyVisibility() {
+            const keyInput = document.getElementById('openai-api-key');
+            const toggleIcon = document.getElementById('api-key-toggle-icon');
+            
+            if (keyInput.type === 'password') {
+                keyInput.type = 'text';
+                toggleIcon.setAttribute('data-feather', 'eye-off');
+            } else {
+                keyInput.type = 'password';
+                toggleIcon.setAttribute('data-feather', 'eye');
+            }
+            feather.replace();
+        }
+        
+        function saveApiConfig() {
+            const apiKey = document.getElementById('openai-api-key').value.trim();
+            
+            if (!apiKey) {
+                alert('Please enter an OpenAI API key');
+                return;
+            }
+            
+            if (!apiKey.startsWith('sk-')) {
+                alert('Invalid API key format. OpenAI API keys start with "sk-"');
+                return;
+            }
+            
+            fetch('/api/settings/api-key', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ api_key: apiKey })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateApiKeyStatus('configured');
+                    alert('API key saved successfully!');
+                } else {
+                    alert('Error saving API key: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error saving API key');
+            });
+        }
+        
+        function testApiConnection() {
+            const apiKey = document.getElementById('openai-api-key').value.trim();
+            
+            if (!apiKey) {
+                alert('Please enter an API key first');
+                return;
+            }
+            
+            // Show loading state
+            const testBtn = event.target;
+            const originalText = testBtn.innerHTML;
+            testBtn.innerHTML = '<i data-feather="loader"></i> Testing...';
+            testBtn.disabled = true;
+            feather.replace();
+            
+            fetch('/api/settings/test-api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ api_key: apiKey })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateApiKeyStatus('working');
+                    alert('✅ API connection successful! Model: ' + data.model);
+                } else {
+                    updateApiKeyStatus('error');
+                    alert('❌ API connection failed: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                updateApiKeyStatus('error');
+                alert('❌ Error testing API connection');
+            })
+            .finally(() => {
+                // Restore button
+                testBtn.innerHTML = originalText;
+                testBtn.disabled = false;
+                feather.replace();
+            });
+        }
+        
+        function updateApiKeyStatus(status) {
+            const statusBadge = document.getElementById('api-key-status');
+            
+            switch(status) {
+                case 'configured':
+                    statusBadge.textContent = 'Configured';
+                    statusBadge.className = 'badge bg-success';
+                    break;
+                case 'working':
+                    statusBadge.textContent = 'Working';
+                    statusBadge.className = 'badge bg-success';
+                    break;
+                case 'error':
+                    statusBadge.textContent = 'Error';
+                    statusBadge.className = 'badge bg-danger';
+                    break;
+                default:
+                    statusBadge.textContent = 'Not configured';
+                    statusBadge.className = 'badge bg-secondary';
+            }
+        }
+        
+        // Check API key status on page load
+        function checkApiKeyStatus() {
+            fetch('/api/settings/api-key-status')
+            .then(response => response.json())
+            .then(data => {
+                if (data.configured) {
+                    updateApiKeyStatus('configured');
+                }
+            })
+            .catch(error => {
+                console.error('Error checking API key status:', error);
+            });
+        }
+        
+        // RSS Management Functions
         function addRSSSource() {
             const url = document.getElementById('new-rss-url').value.trim();
             if (!url) {

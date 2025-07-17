@@ -1,6 +1,6 @@
 # Planner Pulse
 
-## Next-Gen Event Tech Trends • $800M Cincinnati Upgrade • Backup Plans Essential
+## Irvings Wellness Edge | GBTA Uncertainty | 5 Contract Challenges Solved
 
 Generated on July 17, 2025
 
@@ -8,72 +8,92 @@ Generated on July 17, 2025
 
 ## Story 1
 
-### 7 Ways Next-Gen Attendees are Reshaping Event Tech
+### New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
 
-Millennials and Gen Z attendees are driving the evolution of event technology, demanding more interactive and personalized experiences. Planners should integrate mobile-friendly platforms and real-time engagement tools to maintain interest and participation. Embracing these changes ensures events remain relevant and captivating for younger audiences.
-
-🔑 **Key Takeaway:** Incorporate real-time engagement tools to enhance attendee interaction and satisfaction.
-
-[Read More](https://meetings.skift.com/2025/07/16/how-next-gen-attendees-are-reshaping-event-tech/)
+[Read More](https://www.meetingstoday.com/articles/145317/new-gbta-poll-reflects-growing-uncertainty-business-travel-industry)
 
 ---
 
 ## Story 2
 
-### Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+### Incentives Today Spring/Summer 2025
 
-Cincinnati's ambitious $800 million redevelopment includes a state-of-the-art convention center, headquarters hotel, and vibrant public plaza. This investment aims to elevate Cincinnati's status as a premier meetings destination, attracting larger and more diverse events. 🔑 **Key Takeaway:** Consider Cincinnati for future events as it expands its offerings and infrastructure.
-
-[Read More](https://meetings.skift.com/2025/07/16/cincinnati-invests-800-million-to-overhaul-convention-district-and-attract-larger-events/)
+[Read More](https://www.meetingstoday.com/magazine/145318/incentives-today-springsummer-2025)
 
 ---
 
 ## Story 3
 
-### Chicago Bets on Hotel Tax to Stay Competitive
+### How Irving, Texas, Excels in Its Wellness Offerings for Groups
 
-Chicago's tourism leaders propose a 1.5% hotel tax surcharge to maintain competitiveness despite already high taxes. This move aims to fund improvements that attract more events and conferences. Meeting planners should anticipate potential cost implications for hosting events in the city.
-
-🔑 **Key Takeaway:** Plan for potential budget adjustments due to increased hotel taxes in Chicago.
-
-[Read More](https://meetings.skift.com/2025/07/15/chicago-bets-on-hotel-tax-to-stay-competitive/)
+[Read More](https://www.meetingstoday.com/articles/145316/irving-texas-excels-wellness-groups)
 
 ---
 
 ## Story 4
 
-### Time for Plan B: Five Situations Where You'll Need a Backup Plan
+### Why Irving, Texas, Excels in Wellness and Hyper-Personalization
 
-Meeting planners must anticipate potential disruptions like flight delays, unexpected weather, and venue issues. Proactive contingency strategies are crucial for maintaining event success and guest satisfaction. Effective backup plans ensure seamless experiences despite unforeseen challenges.
+Irving, Texas, stands out by integrating wellness initiatives and hyper-personalization into its meetings landscape. The city offers extensive trails, nature experiences, and innovative hotel wellness programs, alongside customized event services that cater to specific client needs. These efforts enhance the overall attendee experience, making Irving a compelling choice for planners.
 
-🔑 **Key Takeaway:** Always prepare adaptable strategies to mitigate disruptions and maintain event success.
-
-[Read More](https://meetings.skift.com/2025/07/15/time-for-plan-b-5-situations-where-youll-need-a-backup-plan/)
+[Read More](https://www.meetingstoday.com/podcasts/145266/irving-texas-wellness-hyper-personalization)
 
 ---
 
 ## Story 5
 
-### Introducing Keynote Listeners: Elevating Voices and Ideas at Skift Meetings Forum
+### 5 Meetings Contract Challenges and Solutions for Uncertain Times
 
-Keynote Listeners are being introduced at the Skift Meetings Forum 2025 to enhance dialogue and highlight innovative ideas within the industry. This initiative aims to extend crucial conversations beyond the event. Meeting planners can leverage this model to enrich their own events.
+Meeting planners face challenges like AI restrictions, privacy concerns, and sustainability metrics in contracts. Political uncertainties, more scrutiny, and immigration issues add complexity to contract negotiations. Building relationships and open communication can aid in navigating these hurdles.
 
-🔑 **Key Takeaway:** Incorporate Keynote Listeners to foster ongoing engagement and idea-sharing.
-
-[Read More](https://meetings.skift.com/2025/07/15/keynote-listeners-skift-meetings-forum-2025/)
+[Read More](https://www.meetingstoday.com/articles/145315/5-meetings-contract-challenges-solutions-jill-blood)
 
 ---
 
-## Sponsor
+## Story 6
 
-### Visit St. Pete Clearwater
+### Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
 
-This issue is sponsored by Visit St. Pete Clearwater — where sunshine meets sophistication. Perfect weather, stunning venues, and world-class hospitality make St. Pete Clearwater the ideal destination for your next meeting or event.
-
-[Learn More](https://www.visitstpeteclearwater.com/meetings)
+[Read More](https://meetings.skift.com/2025/07/17/montreal-attracts-top-meetings-with-worldly-charm-and-local-warmth/)
 
 ---
 
-## Newsletter Information
+## Story 7
+
+### 7 Ways Next-Gen Attendees are Reshaping Event Tech
+
+Millennials and Gen Z are driving a shift in event technology expectations, emphasizing personalization, real-time interaction, and sustainability. Meeting planners must integrate advanced tech solutions to engage these digital-native audiences effectively. Staying ahead of these trends can determine the success of future events.
+
+[Read More](https://meetings.skift.com/2025/07/16/how-next-gen-attendees-are-reshaping-event-tech/)
+
+---
+
+## Story 8
+
+### Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
+
+[Read More](https://meetings.skift.com/2025/07/16/cincinnati-invests-800-million-to-overhaul-convention-district-and-attract-larger-events/)
+
+---
+
+## Story 9
+
+### Chicago Bets on Hotel Tax to Stay Competitive
+
+[Read More](https://meetings.skift.com/2025/07/15/chicago-bets-on-hotel-tax-to-stay-competitive/)
+
+---
+
+## Story 10
+
+### Time for Plan B: Five Situations Where You'll Need a Backup Plan
+
+Meeting planners must anticipate a variety of disruptions, from travel hiccups to venue issues. Preparing for unforeseen challenges is essential to ensure seamless event execution. Proactive strategies can mitigate risks and maintain attendee satisfaction.
+
+[Read More](https://meetings.skift.com/2025/07/15/time-for-plan-b-5-situations-where-youll-need-a-backup-plan/)
+
+---
+
+## About This Newsletter
 
 This newsletter was generated by Planner Pulse

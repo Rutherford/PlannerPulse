@@ -10,13 +10,71 @@ from openai import OpenAI
 
 logger = logging.getLogger(__name__)
 
-# Initialize OpenAI client
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    logger.error("OPENAI_API_KEY not found in environment variables")
-    raise ValueError("OPENAI_API_KEY environment variable is required")
+# Global OpenAI client - will be initialized when API key is provided
+openai_client = None
 
-openai_client = OpenAI(api_key=OPENAI_API_KEY)
+def get_api_key():
+    """Get OpenAI API key from environment or config file"""
+    # First try environment variable
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if api_key:
+        return api_key
+    
+    # Then try config file
+    try:
+        with open("config.json", "r", encoding="utf-8") as f:
+            config = json.load(f)
+            return config.get("openai_api_key")
+    except (FileNotFoundError, json.JSONDecodeError, KeyError):
+        return None
+
+def initialize_openai_client(api_key=None):
+    """Initialize the OpenAI client with the provided or configured API key"""
+    global openai_client
+    
+    if api_key is None:
+        api_key = get_api_key()
+    
+    if not api_key:
+        logger.warning("No OpenAI API key found in environment or config")
+        return False
+    
+    try:
+        openai_client = OpenAI(api_key=api_key)
+        logger.info("OpenAI client initialized successfully")
+        return True
+    except Exception as e:
+        logger.error(f"Failed to initialize OpenAI client: {e}")
+        return False
+
+def test_api_connection(api_key=None):
+    """Test the OpenAI API connection"""
+    try:
+        if api_key:
+            test_client = OpenAI(api_key=api_key)
+        else:
+            if not openai_client:
+                initialize_openai_client()
+            test_client = openai_client
+        
+        if not test_client:
+            return False, "No API client available"
+        
+        # Test with a simple completion
+        response = test_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": "Test"}],
+            max_tokens=1
+        )
+        
+        return True, f"gpt-4o-mini"
+    except Exception as e:
+        logger.error(f"API connection test failed: {e}")
+        return False, str(e)
+
+# Try to initialize on import
+if not initialize_openai_client():
+    logger.warning("OpenAI client not initialized - API key required for summarization features")
 
 def summarize_article(article: Dict) -> Optional[str]:
     """
@@ -28,6 +86,14 @@ def summarize_article(article: Dict) -> Optional[str]:
     Returns:
         Formatted summary string or None if failed
     """
+    global openai_client
+    
+    # Check if client is initialized
+    if not openai_client:
+        if not initialize_openai_client():
+            logger.error("Cannot summarize article: OpenAI client not initialized")
+            return None
+    
     try:
         # Prepare content for summarization
         content_to_summarize = article.get('summary', '')
@@ -122,6 +188,16 @@ def generate_subject_line(summaries: List[Dict], newsletter_title: str) -> str:
     Returns:
         Generated subject line
     """
+    global openai_client
+    
+    # Check if client is initialized
+    if not openai_client:
+        if not initialize_openai_client():
+            logger.error("Cannot generate subject line: OpenAI client not initialized")
+            # Return a fallback subject line
+            from datetime import datetime
+            return f"{newsletter_title} - {datetime.now().strftime('%B %d, %Y')}"
+    
     try:
         # Extract key topics from summaries
         topics = []
