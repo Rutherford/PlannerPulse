@@ -122,16 +122,16 @@ def run_newsletter_generation():
             'generated_at': datetime.now().isoformat()
         }
         
-        success = build_newsletter(newsletter_data, config)
-        
+        success, html_content, markdown_content, text_content = build_newsletter(newsletter_data, config)
+
         if success:
             # Save newsletter and articles to database
             newsletter_data_db = {
                 'title': f"Planner Pulse - {datetime.now().strftime('%Y-%m-%d')}",
                 'subject_line': subject_line,
-                'html_content': '',  # Build_newsletter creates files, not content dict
-                'markdown_content': '',
-                'text_content': '',
+                'html_content': html_content,
+                'markdown_content': markdown_content,
+                'text_content': text_content,
                 'sponsor': current_sponsor
             }
             
