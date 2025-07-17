@@ -117,6 +117,21 @@ def get_full_article_content(url: str) -> str:
         Extracted text content
     """
     try:
+        # Validate URL before fetching
+        if not url or not url.startswith(('http://', 'https://')):
+            logger.debug(f"Invalid URL format: {url}")
+            return ""
+        
+        # Check if URL is accessible with timeout
+        try:
+            response = requests.head(url, timeout=10, allow_redirects=True)
+            if response.status_code != 200:
+                logger.debug(f"URL returned status {response.status_code}: {url}")
+                return ""
+        except Exception as e:
+            logger.debug(f"URL validation failed: {url}, error: {e}")
+            return ""
+        
         logger.debug(f"Fetching full content from: {url}")
         downloaded = trafilatura.fetch_url(url)
         if downloaded:

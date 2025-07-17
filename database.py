@@ -11,14 +11,32 @@ from models import (
     get_session, Article, Newsletter, NewsletterArticle, Sponsor,
     SponsorRotation, RSSSource
 )
+from contextlib import contextmanager
 
 logger = logging.getLogger(__name__)
+
+@contextmanager
+def get_db_session():
+    """Context manager for database sessions"""
+    session = get_session()
+    try:
+        yield session
+    finally:
+        session.close()
 
 class DatabaseArticleManager:
     """Database-backed article management replacing JSON-based deduplicator"""
     
     def __init__(self):
         self.session = get_session()
+    
+    def __del__(self):
+        """Cleanup method to close session"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except Exception:
+                pass
     
     def is_duplicate(self, article: Dict) -> bool:
         """Check if article already exists in database"""
@@ -117,6 +135,14 @@ class DatabaseSponsorManager:
     def __init__(self):
         self.session = get_session()
     
+    def __del__(self):
+        """Cleanup method to close session"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except Exception:
+                pass
+    
     def get_current_sponsor(self) -> Optional[Dict]:
         """Get the current sponsor based on rotation logic"""
         try:
@@ -168,8 +194,8 @@ class DatabaseSponsorManager:
             
             self.session.commit()
             
-            # Get next sponsor
-            next_sponsor = self.get_current_sponsor()
+            # Get next sponsor (exclude the current one that was just used)
+            next_sponsor = self._get_next_sponsor_excluding(current['id'])
             logger.info(f"Rotated sponsor: {current['name']} -> {next_sponsor['name'] if next_sponsor else 'None'}")
             
             return next_sponsor
@@ -177,6 +203,36 @@ class DatabaseSponsorManager:
         except Exception as e:
             self.session.rollback()
             logger.error(f"Error rotating sponsor: {e}")
+            return None
+    
+    def _get_next_sponsor_excluding(self, exclude_id: int) -> Optional[Dict]:
+        """Get the next sponsor excluding the specified sponsor ID"""
+        try:
+            # Get active sponsors ordered by priority and least recently used, excluding the current one
+            sponsors = self.session.query(Sponsor).filter(
+                Sponsor.active == True,
+                Sponsor.id != exclude_id
+            ).order_by(
+                desc(Sponsor.priority),
+                Sponsor.last_used.asc().nullsfirst()
+            ).all()
+            
+            if not sponsors:
+                # If no other sponsors available, return None
+                return None
+            
+            next_sponsor = sponsors[0]
+            
+            return {
+                'id': next_sponsor.id,
+                'name': next_sponsor.name,
+                'message': next_sponsor.message,
+                'link': next_sponsor.link,
+                'active': next_sponsor.active
+            }
+            
+        except Exception as e:
+            logger.error(f"Error getting next sponsor: {e}")
             return None
     
     def add_sponsor(self, sponsor_data: Dict) -> Optional[Sponsor]:
@@ -267,6 +323,14 @@ class DatabaseNewsletterManager:
     def __init__(self):
         self.session = get_session()
     
+    def __del__(self):
+        """Cleanup method to close session"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except Exception:
+                pass
+    
     def save_newsletter(self, newsletter_data: Dict, articles: List[Dict]) -> Optional[Newsletter]:
         """Save newsletter and associated articles to database"""
         try:
@@ -346,6 +410,14 @@ class DatabaseRSSManager:
     
     def __init__(self):
         self.session = get_session()
+    
+    def __del__(self):
+        """Cleanup method to close session"""
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except Exception:
+                pass
     
     def get_active_sources(self) -> List[RSSSource]:
         """Get active RSS sources"""
