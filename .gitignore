@@ -63,3 +63,6 @@ Thumbs.db
 newsletter.log
 output/newsletter_*.md
 data/article_history.json
+# Ignore generated folders
+output/
+data/
