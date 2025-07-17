@@ -8,7 +8,7 @@ import requests
 import trafilatura
 import logging
 from typing import List, Dict
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlparse
 
 logger = logging.getLogger(__name__)
 

@@ -1,7 +1,6 @@
 """Newsletter builder - Creates HTML, Markdown and text versions"""
 
 import os
-import json
 import logging
 from datetime import datetime
 from typing import Dict, Any

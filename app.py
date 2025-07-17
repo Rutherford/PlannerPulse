@@ -165,10 +165,13 @@ def rotate_sponsor():
     """Manually rotate to next sponsor - database version"""
     try:
         sponsor_manager = DatabaseSponsorManager()
-        next_sponsor = sponsor_manager.rotate_sponsor()
-        new_sponsor = sponsor_manager.get_current_sponsor()
-        flash(f'Rotated to sponsor: {new_sponsor.get("name", "None")}', 'success')
-        return jsonify({'success': True, 'sponsor': new_sponsor})
+        new_sponsor = sponsor_manager.rotate_sponsor()
+        if new_sponsor:
+            flash(f'Rotated to sponsor: {new_sponsor.get("name", "None")}', 'success')
+            return jsonify({'success': True, 'sponsor': new_sponsor})
+        else:
+            flash('Rotated sponsor, but no active sponsor found to rotate to.', 'warning')
+            return jsonify({'success': True, 'sponsor': None})
     except Exception as e:
         logger.error(f"Error rotating sponsor: {e}")
         return jsonify({'error': str(e)}), 500
