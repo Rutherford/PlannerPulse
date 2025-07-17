@@ -49,19 +49,22 @@ The application follows a modular, service-oriented architecture with clear sepa
 
 ### Web Interface
 
-6. **Flask Application** (`app.py`)
+1. **Flask Application** (`app.py`)
+
    - Provides dashboard for newsletter preview and management
    - Offers real-time statistics and system status
    - Includes manual newsletter generation capabilities
 
 ### Configuration and Templates
 
-7. **Configuration System** (`config.json`)
+1. **Configuration System** (`config.json`)
+
    - Centralized settings for RSS sources, sponsors, and output preferences
    - Easily configurable without code changes
    - Supports sponsor rotation and email formatting settings
 
-8. **Template System** (`templates/`)
+2. **Template System** (`templates/`)
+
    - Professional email-optimized HTML templates
    - Bootstrap-based web dashboard interface
    - Responsive design for multiple device types
@@ -79,10 +82,12 @@ The application follows a modular, service-oriented architecture with clear sepa
 ## External Dependencies
 
 ### APIs and Services
+
 - **OpenAI GPT-4o**: For article summarization and subject line generation (requires API key)
 - **RSS Feeds**: Multiple meeting industry sources for content aggregation
 
 ### Python Libraries
+
 - **Flask**: Web framework for dashboard interface
 - **feedparser**: RSS feed processing
 - **trafilatura**: Content extraction and fallback parsing
@@ -90,6 +95,7 @@ The application follows a modular, service-oriented architecture with clear sepa
 - **OpenAI**: Python client for GPT-4o integration
 
 ### Data Storage
+
 - **PostgreSQL Database**: Primary data persistence for articles, newsletters, sponsors, and analytics
 - **JSON Files**: Legacy configuration and backup data storage
 - **File System**: Newsletter output storage and template management
@@ -99,6 +105,7 @@ The application follows a modular, service-oriented architecture with clear sepa
 The application is designed for simple deployment with minimal infrastructure requirements:
 
 ### Current Architecture
+
 - **Single-server deployment** suitable for Replit or similar platforms
 - **PostgreSQL database** for robust data persistence and analytics
 - **File-based configuration** for settings and templates
@@ -106,6 +113,7 @@ The application is designed for simple deployment with minimal infrastructure re
 - **Static file serving** through Flask for CSS and assets
 
 ### Scalability Considerations
+
 - PostgreSQL database provides robust data persistence and query capabilities
 - Database-backed article deduplication and sponsor rotation
 - Service-oriented architecture supports microservice decomposition
@@ -114,6 +122,7 @@ The application is designed for simple deployment with minimal infrastructure re
 - Analytics and reporting capabilities through database queries
 
 ### Security and Configuration
+
 - Environment variables for sensitive configuration (API keys)
 - Secret key configuration for Flask sessions
 - Configurable logging levels and output destinations
