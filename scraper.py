@@ -122,14 +122,12 @@ def get_full_article_content(url: str) -> str:
             logger.debug(f"Invalid URL format: {url}")
             return ""
         
-        # Check if URL is accessible with timeout
         try:
-            response = requests.head(url, timeout=10, allow_redirects=True)
-            if response.status_code != 200:
-                logger.debug(f"URL returned status {response.status_code}: {url}")
-                return ""
-        except Exception as e:
-            logger.debug(f"URL validation failed: {url}, error: {e}")
+            response = requests.get(url, timeout=10, allow_redirects=True)
+            response.raise_for_status()
+            downloaded = trafilatura.fetch_url(url, html=response.text)
+        except requests.exceptions.RequestException as e:
+            logger.debug(f"URL fetch failed for {url}: {e}")
             return ""
         
         logger.debug(f"Fetching full content from: {url}")
