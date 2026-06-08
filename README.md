@@ -4,10 +4,12 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-3.1+-green.svg)](https://flask.palletsprojects.com)
-[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-orange.svg)](https://openai.com)
+[![Elysia](https://img.shields.io/badge/AI-Elysia%20%28Informa%29-orange.svg)](https://api.stage.ai.informa.com/v1/ai/docs)
 [![SQLite / PostgreSQL](https://img.shields.io/badge/Database-SQLite%20%7C%20PostgreSQL-336791.svg)](https://postgresql.org)
 
 PlannerPulse is an internal editorial intelligence tool for the meetings and events industry, built for Informa Connect. It combines automated news ingestion, AI-powered relevance classification, TSNN-style draft article generation, and a full editorial review workflow — all in a single Flask web application.
+
+All LLM calls are routed through **Elysia**, Informa's internal AI platform (`api.stage.ai.informa.com`), authenticated via OAuth2 client_credentials against the Informa IDP.
 
 ---
 
@@ -15,7 +17,7 @@ PlannerPulse is an internal editorial intelligence tool for the meetings and eve
 
 PlannerPulse runs two parallel workflows:
 
-**Newsletter Generator** — Fetches articles from configured RSS feeds, summarises them with GPT-4o, applies source-diversity balancing, and produces a professionally formatted HTML/Markdown/text newsletter ready for Beehiiv, Mailchimp, or any HTML email editor.
+**Newsletter Generator** — Fetches articles from configured RSS feeds, summarises them with Elysia (GPT-4o by default), applies source-diversity balancing, and produces a professionally formatted HTML/Markdown/text newsletter ready for Beehiiv, Mailchimp, or any HTML email editor.
 
 **TSNN AI Editorial Assistant** — An internal newsroom tool that monitors industry sources, scores every article for TSNN relevance (0–100), generates publication-ready first drafts in TSNN's editorial voice, and presents them in a review dashboard with approve / reject / regenerate / export / AI feedback actions.
 
@@ -25,12 +27,12 @@ PlannerPulse runs two parallel workflows:
 
 ### Editorial Pipeline (TSNN AI Assistant)
 
-- **Relevance Classification** — GPT-4o-mini scores every ingested article 0–100 against TSNN's topic taxonomy (Trade Show Operations, Venues & Convention Centers, Event Technology, Industry Organisations, Major Organisers, M&A, Market Data). Only articles scoring 75+ proceed to draft generation.
-- **TSNN-Style Draft Generation** — GPT-4o generates full articles using the TSNN AI Editorial Assistant PRD prompts: data-forward headline, news lede, structured body (`Zooming out:`, `By the numbers:`, `Bottom line:`), *Why This Matters to Event Professionals*, and 3–5 key takeaway bullets with inline source citations.
+- **Relevance Classification** — Elysia's `gpt-5-mini` (the cheap-tier model) scores every ingested article 0–100 against TSNN's topic taxonomy (Trade Show Operations, Venues & Convention Centers, Event Technology, Industry Organisations, Major Organisers, M&A, Market Data). Only articles scoring 75+ proceed to draft generation.
+- **TSNN-Style Draft Generation** — Elysia's `gpt-4o` generates full articles using the TSNN AI Editorial Assistant PRD prompts: data-forward headline, news lede, structured body (`Zooming out:`, `By the numbers:`, `Bottom line:`), *Why This Matters to Event Professionals*, and 3–5 key takeaway bullets with inline source citations.
 - **Alternative Headlines** — Every draft includes 2 alternative headline angles selectable with one click.
 - **Editorial Review Queue** — Split-panel dashboard (queue left, full article detail right). Filter by Pending / Approved / Rejected.
 - **Approve / Reject / Edit / Regenerate** — One-click approve; reject with categorised reason (Not relevant, Inaccurate, Tone mismatch, Already covered, etc.); inline headline + body editing; regenerate with free-text editor instructions.
-- **AI Editorial Feedback** — "AI Feedback" button sends the draft to GPT-4o for a structured quality review: Overall score, TSNN Voice score, Strengths, Issues (with severity), Missing Context, and Suggested Improvements.
+- **AI Editorial Feedback** — "AI Feedback" button sends the draft to Elysia (GPT-4o) for a structured quality review: Overall score, TSNN Voice score, Strengths, Issues (with severity), Missing Context, and Suggested Improvements.
 - **Export** — Approved drafts export as CMS-ready HTML, Markdown, or plain text.
 - **URL-Based Deduplication** — Articles already in the database are skipped; previously unclassified articles are picked up and classified on subsequent runs.
 - **NewsData.io Integration** — Optional: set `NEWSDATA_API_KEY` to add 87,000+ licensed news sources alongside RSS feeds.
@@ -58,7 +60,7 @@ PlannerPulse runs two parallel workflows:
 
 - RSS scraping from 7+ industry publications
 - Source diversity filter — round-robin interleaving (max 2 articles per outlet)
-- GPT-4o summarisation with key takeaway extraction
+- Elysia summarisation with key takeaway extraction
 - AI-generated subject lines
 - Sponsor rotation with CVB/DMO support
 - Professional HTML output using Informa Connect brand styling (Georgia serif masthead, editorial article layout)
@@ -76,7 +78,9 @@ PlannerPulse runs two parallel workflows:
 ### Prerequisites
 
 - Python 3.11+
-- OpenAI API key
+- Elysia credentials issued by the Informa Connect AI / Elysia onboarding team:
+  - `app_id` (registered application identifier)
+  - OAuth2 `client_id` and `client_secret` for the Informa IDP
 - NewsData.io API key (optional)
 
 ### Installation
@@ -98,8 +102,19 @@ DATABASE_URL=sqlite:///planner_pulse.db python models.py
 Create a `.env` file:
 
 ```
-# Required
-OPENAI_API_KEY=sk-...
+# Required — Elysia (Informa AI) credentials
+ELYSIA_APP_ID=your-app-id
+ELYSIA_CLIENT_ID=your-client-id
+ELYSIA_CLIENT_SECRET=your-client-secret
+
+# Optional — Elysia stack pointers (defaults shown). Switch to prod hosts
+# (api.ai.informa.com / idp.ai.informa.com) once prod credentials are issued.
+ELYSIA_API_BASE=https://api.stage.ai.informa.com
+ELYSIA_TOKEN_URL=https://idp.dev.ai.informa.com/oauth2/token
+# ELYSIA_SCOPE=elysia/api
+# ELYSIA_DEFAULT_MODEL=gpt-4o            # gpt-4o | gpt-5 | gpt-5-mini | claude-* | DeepSeek-V3-0324
+# ELYSIA_DEFAULT_PROVIDER=azure          # azure | aws
+# ELYSIA_COLLECTION=content_vectorstore
 
 # Database (SQLite for local dev, PostgreSQL for production)
 DATABASE_URL=sqlite:///planner_pulse.db
@@ -138,16 +153,19 @@ PlannerPulse/
 ├── app.py                   # Flask application — all routes
 ├── main.py                  # Newsletter generation orchestrator
 │
+├── # LLM integration
+├── llm_client.py            # Elysia client + OpenAI-compatible shim (handles OAuth2)
+│
 ├── # Editorial pipeline
-├── classifier.py            # TSNN relevance classifier (GPT-4o-mini, 0-100)
-├── tsnn_generator.py        # TSNN draft generator (GPT-4o, structured JSON)
+├── classifier.py            # TSNN relevance classifier (Elysia gpt-5-mini, 0-100)
+├── tsnn_generator.py        # TSNN draft generator (Elysia gpt-4o, structured JSON)
 ├── ingestion_pipeline.py    # Full pipeline: fetch → dedup → classify → draft
 ├── newsdata_fetcher.py      # NewsData.io API integration
 ├── scheduler.py             # APScheduler — 6 AM / 12 PM / 6 PM ET
 │
 ├── # Newsletter generation
 ├── scraper.py               # RSS feed scraper
-├── summarizer.py            # GPT-4o article summarisation
+├── summarizer.py            # Elysia article summarisation + LLM client init
 ├── builder.py               # HTML / Markdown / text builder
 ├── deduplicator.py          # Article deduplication
 ├── sponsor_manager.py       # Sponsor rotation
@@ -245,14 +263,57 @@ Key settings:
 | Auth | Flask-Login |
 | ORM | SQLAlchemy 2.0 |
 | Database | SQLite (dev) / PostgreSQL (prod) |
-| AI — classification | GPT-4o-mini |
-| AI — draft generation | GPT-4o |
-| AI — editorial assist | GPT-4o |
+| AI provider | Elysia (Informa internal AI platform) |
+| AI auth | OAuth2 client_credentials → JWT bearer |
+| AI — classification | Elysia `gpt-5-mini` |
+| AI — draft generation | Elysia `gpt-4o` |
+| AI — editorial assist | Elysia `gpt-4o` |
 | Scheduling | APScheduler 3.x |
 | RSS parsing | feedparser |
 | Full-text extraction | Trafilatura |
 | Charts | Chart.js 4 |
 | Frontend | Bootstrap 5 + vanilla JS |
+
+---
+
+## Elysia Integration
+
+PlannerPulse routes every LLM call through Elysia, Informa's internal AI platform. The integration lives in `llm_client.py`, which exposes an OpenAI-compatible shim so the application code in `summarizer.py`, `classifier.py`, `tsnn_generator.py`, and `app.py` reads exactly like the old OpenAI calls (`client.chat.completions.create(model=..., messages=..., ...)`).
+
+Under the hood the shim:
+
+1. Fetches a JWT from the Informa IDP (`idp.dev.ai.informa.com/oauth2/token`) using OAuth2 `client_credentials`, caches it, and refreshes a minute before expiry.
+2. POSTs to `{ELYSIA_API_BASE}/v2/ai/chat/completion` with the Bearer token, your `appId`, the flattened prompt, and the chosen model.
+3. Translates Elysia's `{question, answer, sources}` response back into OpenAI's `choices[0].message.content` shape so callers don't need to change.
+4. When `response_format={"type":"json_object"}` is requested, appends a strict JSON-only instruction to the prompt and trims any code fences from the response before returning it.
+
+### Model mapping
+
+PlannerPulse's old OpenAI model names are translated automatically:
+
+| OpenAI request | Elysia `name_of_model` |
+|---|---|
+| `gpt-4o` | `gpt-4o` |
+| `gpt-4o-mini` | `gpt-5-mini` |
+| `gpt-4`, `gpt-4-turbo` | `gpt-4o` |
+| `gpt-3.5-turbo` | `gpt-5-mini` |
+
+Override the default with `ELYSIA_DEFAULT_MODEL`. Allowed values match Elysia's enum: `gpt-4o`, `gpt-5`, `gpt-5-mini`, the Claude 3.7 / 4 / 4.5 Sonnet variants, and `DeepSeek-V3-0324`.
+
+### Onboarding
+
+To get the three required values (`ELYSIA_APP_ID`, `ELYSIA_CLIENT_ID`, `ELYSIA_CLIENT_SECRET`), contact the Elysia team inside Informa Connect AI. They issue a registered application identifier plus an OAuth2 client. Until those are filled in, all AI features will log a warning and degrade gracefully — the rest of PlannerPulse keeps running.
+
+### Production cutover
+
+Default config points at the **stage** environment (`api.stage.ai.informa.com` + `idp.dev.ai.informa.com`). To go live, set:
+
+```
+ELYSIA_API_BASE=https://api.ai.informa.com
+ELYSIA_TOKEN_URL=https://idp.ai.informa.com/oauth2/token
+```
+
+(confirm the exact prod hostnames with the Elysia team during prod onboarding) and replace your stage credentials with prod-issued ones.
 
 ---
 

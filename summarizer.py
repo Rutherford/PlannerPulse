@@ -1,12 +1,17 @@
 """
-AI-powered article summarization and subject line generation using OpenAI GPT-4o
+AI-powered article summarization and subject line generation.
+
+LLM provider: Elysia (Informa's internal AI platform), accessed via the
+OpenAI-compatible shim in ``llm_client``. The legacy variable name
+``openai_client`` is kept so callers across the codebase keep working.
 """
 
 import os
 import logging
 import json
 from typing import Dict, List, Optional
-from openai import OpenAI
+
+import llm_client
 
 logger = logging.getLogger(__name__)
 
@@ -14,73 +19,57 @@ logger = logging.getLogger(__name__)
 MIN_CONTENT_LENGTH_FOR_SUMMARY = 200
 MAX_TOKENS_SUMMARY = 300
 MAX_TOKENS_SUBJECT_LINE = 100
-OPENAI_MODEL = "gpt-4o"
-OPENAI_TEMPERATURE_SUMMARY = 0.7
-OPENAI_TEMPERATURE_SUBJECT = 0.8  # Slightly higher for more creative subject lines
+LLM_MODEL = "gpt-4o"
+LLM_TEMPERATURE_SUMMARY = 0.7
+LLM_TEMPERATURE_SUBJECT = 0.8  # kept for parity; Elysia controls temperature internally
+# Backward-compatible aliases (a few call sites still reference these names)
+OPENAI_MODEL = LLM_MODEL
+OPENAI_TEMPERATURE_SUMMARY = LLM_TEMPERATURE_SUMMARY
+OPENAI_TEMPERATURE_SUBJECT = LLM_TEMPERATURE_SUBJECT
 
-# Global OpenAI client - will be initialized when API key is provided
+# Global LLM client. Same name as before so importers don't break.
 openai_client = None
 
-def get_api_key():
-    """Get API key from environment variable only (SECURITY: not from config file)"""
-    # Only use environment variable for security reasons
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if api_key:
-        return api_key
-
-    # SECURITY: Do not load API key from config.json to prevent accidental commits
-    # If API key was previously stored in config.json, it will be ignored
-    logger.warning("No OPENAI_API_KEY found in environment. "
-                  "Set OPENAI_API_KEY environment variable to configure API access.")
-    return None
 
 def initialize_openai_client(api_key=None):
-    """Initialize the OpenAI client with the provided or configured API key"""
+    """Initialise the Elysia-backed LLM client.
+
+    The ``api_key`` argument is accepted for backwards compatibility with the
+    old OpenAI-based code path but is ignored — Elysia uses an OAuth2
+    client_credentials grant configured via ``ELYSIA_*`` env vars.
+    """
     global openai_client
-    
-    if api_key is None:
-        api_key = get_api_key()
-    
-    if not api_key:
-        logger.warning("No OpenAI API key found in environment or config")
-        return False
-    
-    try:
-        openai_client = OpenAI(api_key=api_key)
-        logger.info("OpenAI client initialized successfully")
-        return True
-    except Exception as e:
-        logger.error(f"Failed to initialize OpenAI client: {e}")
+
+    if api_key:
+        logger.info(
+            "initialize_openai_client(api_key=...) was called, but the new "
+            "Elysia backend authenticates via ELYSIA_CLIENT_ID/SECRET. "
+            "The supplied api_key is ignored."
+        )
+
+    client = llm_client.get_default_client(refresh=True)
+    if client is None:
+        openai_client = None
         return False
 
+    openai_client = client
+    logger.info("Elysia LLM client initialised successfully")
+    return True
+
+
 def test_api_connection(api_key=None):
-    """Test the OpenAI API connection"""
-    try:
-        if api_key:
-            test_client = OpenAI(api_key=api_key)
-        else:
-            if not openai_client:
-                initialize_openai_client()
-            test_client = openai_client
-        
-        if not test_client:
-            return False, "No API client available"
-        
-        # Test with a simple completion
-        response = test_client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": "Test"}],
-            max_tokens=1
-        )
-        
-        return True, f"gpt-4o-mini"
-    except Exception as e:
-        logger.error(f"API connection test failed: {e}")
-        return False, str(e)
+    """Smoke-test the LLM connection. Returns (ok, detail)."""
+    if api_key:
+        logger.info("test_api_connection ignores legacy api_key argument under Elysia backend.")
+    return llm_client.test_connection()
+
 
 # Try to initialize on import
 if not initialize_openai_client():
-    logger.warning("OpenAI client not initialized - API key required for summarization features")
+    logger.warning(
+        "Elysia LLM client not initialised — set ELYSIA_APP_ID, "
+        "ELYSIA_CLIENT_ID and ELYSIA_CLIENT_SECRET to enable LLM features."
+    )
 
 def summarize_article(article: Dict) -> Optional[str]:
     """
@@ -297,10 +286,13 @@ Return a JSON object with:
 Format as valid JSON only.
 """
 
-        # the newest OpenAI model is "gpt-4o" which was released May 13, 2024.
-        # do not change this unless explicitly requested by the user
+        if not openai_client:
+            initialize_openai_client()
+        if not openai_client:
+            raise RuntimeError("LLM client not initialised")
+
         response = openai_client.chat.completions.create(
-            model="gpt-4o",
+            model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             response_format={"type": "json_object"},
             temperature=0.3

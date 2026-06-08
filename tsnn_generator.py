@@ -75,7 +75,7 @@ def generate_draft(article: Dict, openai_client=None) -> Optional[Dict]:
             pass
 
     if openai_client is None:
-        logger.error("No OpenAI client available for draft generation")
+        logger.error("No LLM client available for draft generation (Elysia credentials missing).")
         return None
 
     try:
@@ -156,7 +156,7 @@ def regenerate_draft(article: Dict, instructions: str, openai_client=None) -> Op
             pass
 
     if openai_client is None:
-        logger.error("No OpenAI client available for regeneration")
+        logger.error("No LLM client available for regeneration (Elysia credentials missing).")
         return None
 
     try:

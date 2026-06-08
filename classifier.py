@@ -51,7 +51,8 @@ def classify_article(article: Dict, openai_client=None) -> Optional[Dict]:
 
     Args:
         article: Dict with keys: title, summary/content, source/source_name, published/published_at
-        openai_client: Optional pre-initialised OpenAI client; falls back to summarizer module client.
+        openai_client: Optional pre-initialised LLM client (Elysia-backed shim);
+                       falls back to summarizer module client.
 
     Returns:
         Dict with: relevance_score (0-100), primary_topic, secondary_topics, justification,
@@ -66,7 +67,7 @@ def classify_article(article: Dict, openai_client=None) -> Optional[Dict]:
             pass
 
     if openai_client is None:
-        logger.error("No OpenAI client available for classification")
+        logger.error("No LLM client available for classification (Elysia credentials missing).")
         return None
 
     try:

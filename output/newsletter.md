@@ -1,99 +1,72 @@
 # Planner Pulse
+*Sustainable Meetings in Iowa • Convenes $230M Expansion • Liverpools Green Training*
 
-## Irvings Wellness Edge | GBTA Uncertainty | 5 Contract Challenges Solved
-
-Generated on July 17, 2025
+*Generated on March 25, 2026*
 
 ---
 
 ## Story 1
+**Green Gatherings: Meetings and Offsite Activities in Eastern Iowa Are Prioritizing Sustainability**
+Eastern Iowa's venues like Indian Creek Nature Center and Prairiewoods focus on sustainable meetings with nature-inspired spaces and eco-friendly practices. Dubuque's Grand River Convention Center and Convivium Urban Farmstead offer sustainable education and dining experiences. Iowa City's Big Grove Brewery and Walker Homestead combine agritourism with eco-conscious events.
 
-### New GBTA Poll Reflects Growing Uncertainty in Business Travel Industry
-
-[Read More](https://www.meetingstoday.com/articles/145317/new-gbta-poll-reflects-growing-uncertainty-business-travel-industry)
+[Read More](https://www.meetingstoday.com/articles/145796/green-gatherings-meetings-and-offsite-activities-eastern-iowa-are-prioritizing)
 
 ---
 
 ## Story 2
+**Convene Raises $230 Million**
+Convene's transformation into a multi-brand platform has captured substantial investor attention, securing $230 million. This investment will fuel its expansion, enhancing venue offerings and technological capabilities. Meeting planners should watch for new innovative solutions from Convene.
 
-### Incentives Today Spring/Summer 2025
-
-[Read More](https://www.meetingstoday.com/magazine/145318/incentives-today-springsummer-2025)
+[Read More](https://meetings.skift.com/2026/03/25/convene-raises-230-million/)
 
 ---
 
 ## Story 3
+**New Sustainability Module To Power Liverpool’s Green Events Talent Pipeline**
+Liverpool City Council collaborates with LJMU and AGF to launch a training module for sustainable event management. This pilot program aims to prepare students for eco-friendly event execution, enhancing the sustainability skills critical in the industry.
 
-### How Irving, Texas, Excels in Its Wellness Offerings for Groups
-
-[Read More](https://www.meetingstoday.com/articles/145316/irving-texas-excels-wellness-groups)
+[Read More](https://www.eventindustrynews.com/news/new-sustainability-module-to-power-liverpools-green-events-talent-pipeline)
 
 ---
 
 ## Story 4
+**The Brief: Garden Parties and Beauty Multiverses**
+Explore the latest trends in experiential marketing, including innovative beauty experiences at SEPHORiA 2026 and unique brand engagement strategies. These insights can help event professionals create more immersive and interactive experiences for attendees.
 
-### Why Irving, Texas, Excels in Wellness and Hyper-Personalization
-
-Irving, Texas, stands out by integrating wellness initiatives and hyper-personalization into its meetings landscape. The city offers extensive trails, nature experiences, and innovative hotel wellness programs, alongside customized event services that cater to specific client needs. These efforts enhance the overall attendee experience, making Irving a compelling choice for planners.
-
-[Read More](https://www.meetingstoday.com/podcasts/145266/irving-texas-wellness-hyper-personalization)
+[Read More](https://www.eventmarketer.com/article/brief-garden-parties-sephoria-2026/)
 
 ---
 
 ## Story 5
+**$90B Industry Shift - New Inside Data**
 
-### 5 Meetings Contract Challenges and Solutions for Uncertain Times
 
-Meeting planners face challenges like AI restrictions, privacy concerns, and sustainability metrics in contracts. Political uncertainties, more scrutiny, and immigration issues add complexity to contract negotiations. Building relationships and open communication can aid in navigating these hurdles.
-
-[Read More](https://www.meetingstoday.com/articles/145315/5-meetings-contract-challenges-solutions-jill-blood)
+[Read More](https://www.specialevents.com/weddings/-90b-industry-shift-new-inside-data)
 
 ---
 
 ## Story 6
+**UrVenue to Showcase Unified Booking and Experience Commerce Platform at Indian Gaming Tradeshow and Convention 2026**
 
-### Montréal Attracts Top Meetings With Worldly Charm and Local Warmth
 
-[Read More](https://meetings.skift.com/2025/07/17/montreal-attracts-top-meetings-with-worldly-charm-and-local-warmth/)
+[Read More](https://www.hospitalitynet.org/news/4131622/urvenue-to-showcase-unified-booking-and-experience-commerce-platform-at-indian-gaming-tradeshow-and-convention-2026)
 
 ---
 
 ## Story 7
+**UrVenue to Showcase Unified Booking and Experience Commerce Platform at Indian Gaming Tradeshow and Convention 2026**
 
-### 7 Ways Next-Gen Attendees are Reshaping Event Tech
 
-Millennials and Gen Z are driving a shift in event technology expectations, emphasizing personalization, real-time interaction, and sustainability. Meeting planners must integrate advanced tech solutions to engage these digital-native audiences effectively. Staying ahead of these trends can determine the success of future events.
-
-[Read More](https://meetings.skift.com/2025/07/16/how-next-gen-attendees-are-reshaping-event-tech/)
+[Read More](https://www.hospitalitynet.org/news/4131622/urvenue-to-showcase-unified-booking-and-experience-commerce-platform-at-indian-gaming-tradeshow-and-convention-2026)
 
 ---
 
-## Story 8
+## Sponsor
+**Visit Tampa Bay**
+Discover why Tampa Bay is one of the country’s most exciting destinations for meetings and events. With stunning waterfront venues, year-round sunshine, and a vibrant mix of culture, cuisine, and entertainment, Tampa Bay offers the perfect backdrop to elevate your next gathering. Whether you’re planning an intimate retreat or a large-scale conference, Visit Tampa Bay is ready to help you bring your vision to life.
 
-### Cincinnati Invests $800 Million to Overhaul Convention District and Attract Larger Events
-
-[Read More](https://meetings.skift.com/2025/07/16/cincinnati-invests-800-million-to-overhaul-convention-district-and-attract-larger-events/)
-
----
-
-## Story 9
-
-### Chicago Bets on Hotel Tax to Stay Competitive
-
-[Read More](https://meetings.skift.com/2025/07/15/chicago-bets-on-hotel-tax-to-stay-competitive/)
+[Learn More](https://www.visittampabay.com)
 
 ---
 
-## Story 10
-
-### Time for Plan B: Five Situations Where You'll Need a Backup Plan
-
-Meeting planners must anticipate a variety of disruptions, from travel hiccups to venue issues. Preparing for unforeseen challenges is essential to ensure seamless event execution. Proactive strategies can mitigate risks and maintain attendee satisfaction.
-
-[Read More](https://meetings.skift.com/2025/07/15/time-for-plan-b-5-situations-where-youll-need-a-backup-plan/)
-
----
-
-## About This Newsletter
-
-This newsletter was generated by Planner Pulse
+*This newsletter was generated by Planner Pulse*

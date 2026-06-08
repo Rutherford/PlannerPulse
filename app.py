@@ -569,74 +569,102 @@ def update_email_settings():
 
 @app.route('/api/settings/api-key', methods=['POST'])
 def save_api_key():
-    """Save OpenAI API key to configuration"""
+    """Save Elysia credentials for the current session.
+
+    PlannerPulse used to take an OpenAI ``sk-...`` key here. Now it accepts
+    Elysia OAuth2 client_credentials (app_id, client_id, client_secret) and
+    refreshes the LLM client. Values are stored in the process environment
+    only — for persistence set them in the deployment's secret manager.
+    """
     try:
-        data = request.get_json()
-        api_key = data.get('api_key', '').strip()
-        
-        if not api_key:
-            return jsonify({'error': 'API key is required'}), 400
+        data = request.get_json() or {}
+        app_id = (data.get('app_id') or '').strip()
+        client_id = (data.get('client_id') or '').strip()
+        client_secret = (data.get('client_secret') or '').strip()
 
-        if not api_key.startswith('sk-'):
-            return jsonify({'error': 'Invalid API key format'}), 400
+        if not (app_id and client_id and client_secret):
+            return jsonify({
+                'error': 'app_id, client_id, and client_secret are all required.'
+            }), 400
 
-        # SECURITY: Store API key in environment variable only, NOT in config.json
-        # Set the environment variable for the current session
-        os.environ['OPENAI_API_KEY'] = api_key
+        os.environ['ELYSIA_APP_ID'] = app_id
+        os.environ['ELYSIA_CLIENT_ID'] = client_id
+        os.environ['ELYSIA_CLIENT_SECRET'] = client_secret
 
-        # Reinitialize the OpenAI client with new key
         from summarizer import initialize_openai_client
-        if initialize_openai_client(api_key):
-            flash('OpenAI API key saved to environment for this session. '
-                  'For persistence, set OPENAI_API_KEY environment variable.', 'success')
+        if initialize_openai_client():
+            flash('Elysia credentials saved for this session. For persistence, set the '
+                  'ELYSIA_APP_ID / ELYSIA_CLIENT_ID / ELYSIA_CLIENT_SECRET env vars.',
+                  'success')
             return jsonify({'success': True,
-                          'message': 'API key configured for current session only. '
-                                   'Set OPENAI_API_KEY environment variable for persistence.'})
-        else:
-            return jsonify({'error': 'Failed to initialize OpenAI client'}), 500
-            
+                            'message': 'Elysia credentials configured for current session.'})
+        return jsonify({'error': 'Failed to initialise the Elysia LLM client.'}), 500
+
     except Exception as e:
-        logger.error(f"Error saving API key: {e}")
+        logger.error(f"Error saving Elysia credentials: {e}")
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/settings/api-key-status')
 def api_key_status():
-    """Check if API key is configured and not a placeholder"""
+    """Report whether Elysia credentials are configured."""
     try:
-        # Prefer environment variable
-        api_key = os.environ.get('OPENAI_API_KEY', '')
-        # Treat placeholder values as unconfigured
-        placeholder = not api_key or api_key in ('sk-demo-key', 'your-key-here', '')
-        configured = bool(api_key and not placeholder)
+        app_id = os.environ.get('ELYSIA_APP_ID', '')
+        client_id = os.environ.get('ELYSIA_CLIENT_ID', '')
+        client_secret = os.environ.get('ELYSIA_CLIENT_SECRET', '')
+
+        placeholders = {'', 'changeme', 'your-app-id', 'your-client-id', 'your-client-secret'}
+        configured = (
+            bool(app_id) and app_id not in placeholders
+            and bool(client_id) and client_id not in placeholders
+            and bool(client_secret) and client_secret not in placeholders
+        )
         return jsonify({
             'configured': configured,
-            'masked_key': f"sk-...{api_key[-4:]}" if configured else None
+            'provider': 'elysia',
+            'app_id': app_id if configured else None,
+            'masked_client_id': f"{client_id[:4]}…{client_id[-4:]}" if configured else None,
         })
     except Exception as e:
-        logger.error(f"Error checking API key status: {e}")
+        logger.error(f"Error checking Elysia credential status: {e}")
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/settings/test-api', methods=['POST'])
 def test_api_connection():
-    """Test OpenAI API connection"""
+    """Test the Elysia API connection.
+
+    Uses currently-configured ELYSIA_* env vars. If the request body provides
+    new ``app_id``/``client_id``/``client_secret``, those override the env for
+    the duration of this request only.
+    """
     try:
-        data = request.get_json()
-        api_key = data.get('api_key', '').strip()
-        
-        if not api_key:
-            return jsonify({'error': 'API key is required'}), 400
-            
-        # Test the API connection
-        from summarizer import test_api_connection
-        success, result = test_api_connection(api_key)
-        
+        data = request.get_json() or {}
+        # Optional override for one-shot validation from a settings dialog.
+        overrides = {
+            'ELYSIA_APP_ID': data.get('app_id'),
+            'ELYSIA_CLIENT_ID': data.get('client_id'),
+            'ELYSIA_CLIENT_SECRET': data.get('client_secret'),
+        }
+        prior = {k: os.environ.get(k) for k in overrides}
+        try:
+            for k, v in overrides.items():
+                if v:
+                    os.environ[k] = v.strip()
+            from summarizer import test_api_connection as _test
+            success, result = _test()
+        finally:
+            # Restore env so a failed test doesn't poison the running config.
+            for k, v in prior.items():
+                if v is None:
+                    os.environ.pop(k, None)
+                else:
+                    os.environ[k] = v
+
         if success:
             return jsonify({'success': True, 'model': result})
-        else:
-            return jsonify({'success': False, 'error': result}), 400
-            
+        return jsonify({'success': False, 'error': result}), 400
+
     except Exception as e:
-        logger.error(f"Error testing API connection: {e}")
+        logger.error(f"Error testing Elysia connection: {e}")
         return jsonify({'error': str(e)}), 500
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -776,7 +804,7 @@ def api_regenerate_draft(draft_id):
     }
     new_draft_data = regenerate_draft(article_dict, instructions)
     if not new_draft_data:
-        return jsonify({'error': 'Regeneration failed — check OpenAI API key'}), 500
+        return jsonify({'error': 'Regeneration failed — check Elysia LLM credentials'}), 500
     success = dm.update_draft_after_regeneration(draft_id, new_draft_data)
     if success:
         updated = dm.get_draft_by_id(draft_id)
@@ -994,7 +1022,7 @@ def api_editor_assist(draft_id):
     if not openai_client:
         initialize_openai_client()
     if not openai_client:
-        return jsonify({'error': 'OpenAI API key not configured'}), 400
+        return jsonify({'error': 'Elysia LLM credentials not configured'}), 400
 
     dm = DraftManager()
     draft = dm.get_draft_by_id(draft_id)
